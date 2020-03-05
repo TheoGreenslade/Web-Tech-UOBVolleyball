@@ -1,3 +1,3 @@
-body {
-    background-color: lightblue;
-  }
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
