@@ -10,6 +10,7 @@
     <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <link rel="stylesheet" href="css/custom.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -17,90 +18,122 @@
     <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
     <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
     <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+    <script src="js/scroll.js"></script>
 </head>
 
 <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt=""></img>
-            UoB Volleyball Club
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar_top">
+        <a style="padding-left:15px"> 
+            <img src="img/logo.png" height="50" class="d-inline-block align-top" alt=""></img>
         </a>
+
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  About The Club
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">About the Club</a>
-                    <a class="dropdown-item" href="#">Squads</a>
-                    <a class="dropdown-item" href="#">Committee</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">FAQs</a>
-                    <a class="dropdown-item" href="#">Intramural</a>
-                    <a class="dropdown-item" href="#">Team Bristol</a>
-                    <a class="dropdown-item" href="#">League Tables</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="trainingTimes.html">Training Times</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="trainingLocation.html">Training Location</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="howToJoin.html">How to join</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contactUs.html">Contact us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="calender.html">Calender</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="sponsors.html">Sponsors</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Shop (coming soon)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="hallOfFame.html">Hall of fame</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <ul class="navbar-nav mr-auto"></ul>
+            <form class="form-inline my-2 my-lg-0">              
+
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        THE CLUB
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="aboutClub.html">About the Club</a>
+                          <a class="dropdown-item" href="#">Squads</a>
+                          <a class="dropdown-item" href="committee.html">Committee</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">FAQs</a>
+                          <a class="dropdown-item" href="#">Intramural</a>
+                          <a class="dropdown-item" href="#">Team Bristol</a>
+                          <a class="dropdown-item" href="#">League Tables</a>
+                      </div>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="training.html">TRAINING</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="howToJoin.html">JOIN</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contactUs.html">CONTACT US</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="calender.html">CALENDER</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#">SHOP</a>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="hallOfFame.html">HALL OF FAME</a>
+                    </li>
+              </ul>
             </form>
+            <!-- <form class="form-inline my-2 my-lg-0">  
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
           </div>
 </nav>
-    
-    <div class="jumbotron text-center">
-        <h1>University of Bristol Volleyball Club</h1>
-        <!-- <img src="img/bros.jpg" class="img-responsive" alt="Responsive image"></img>   -->
-    </div> 
 
-    <div class="container-fluid">
-        <img src="img/bros.jpg" class="img-responsive" alt="Responsive image"></img>        
+    <div class="container-fluid" style = "padding: 0px; padding-top: 60px">
+        <img src="img/Volleyball Image.jpg" class="img-responsive" alt="Responsive image"></img>   
+        <div class="overlay">
+            <a class="icon">
+              <i class="fa fa-angle-down" onclick="scrollDown()" style = "color: white"></i>
+            </a>
+        </div>
     </div>
-      
 
-    <div class="jumbotron jumbotron-fluid">
-     <div class="container"><p class="lead">We are a friendly club open to any student at the University of Bristol. Whether you are a seasoned pro or a complete beginner, you will be able to join the club and play volleyball at your level.</p>
-         <hr class="my-4"></hr>
-      <p class="lead">We also host a number of unforgettable socials each term giving you a chance to get to know your team members as well as everyone else in the club.</p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </p>
-     </div>
-    </div>
+    <div style=" background-image: url(img/volleyballBackground.svg); background-size: 100%;">
+      <div style = "padding-left: 20%; padding-right: 20%; background-color: transparent;">
+      <div id = "intro" class="jumbotron jumbotron-fluid" style="background-color: transparent">
+          <div class="container" style="padding-bottom: 0px">
+            <h1 class = "title" style="padding-top: 60px">UoB VOLLEYBALL</h1>
+            <hr class="my-4"></hr>
+            <p class="lead" >We are a friendly club open to any student at the University of Bristol. Whether you are a seasoned pro or a complete beginner, you will be able to join the club and play volleyball at your level.</p>
+            
+            <p class="lead">
+              We also host a number of unforgettable socials each term giving you a chance to get to know your team members as well as everyone else in the club.
+            </p>
+            <p class="lead">
+              <a href = "#" style = "color: red;">Learn more</a>
+            </p>
+          </div>
+          </div>
+        </div>
+
+      <!-- <div style = "padding-left: 20%; padding-right: 20%;">
+        <div class="video-container">
+            <iframe  src="https://www.youtube.com/embed/4T4FMWl-8ZM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>  -->
+
+      <div class="row" style = "padding: 20px; padding-top: 0">
+          <div class="col-sm-2">
+              <button type="button" class="btn btn-danger btn-lg btn-block red_button"><a href = "howToJoin.html" style = "color: white">JOIN</a></button>
+          </div>
+          <div class="col-sm-2">
+              <button type="button" class="btn btn-danger btn-lg btn-block red_button">SQUADS</button>
+          </div>
+          <div class="col-sm-2">
+              <button type="button" class="btn btn-danger btn-lg btn-block red_button">SHOP</button>
+          </div>
+          <div class="col-sm-2">
+              <button type="button" class="btn btn-danger btn-lg btn-block red_button"><a href = "training.html" style = "color: white">TRAINING</a></button>
+          </div>
+          <div class="col-sm-2">
+            <button type="button" class="btn btn-danger btn-lg btn-block red_button"><a href = "calender.html" style = "color: white">CALENDER</a></button>
+          </div>
+          <div class="col-sm-2">
+              <button type="button" class="btn btn-danger btn-lg btn-block red_button">LEAGUE TABLES</button>
+          </div>
+      </div>
 
     <nav class="navbar navbar-light bg-light">
         <form class="form-inline">
@@ -110,6 +143,7 @@
           <button class="btn" type = "button" style="font-size: 40px"><a href="https://www.youtube.com/channel/UCH9R8BUpGsMqHVsIj7O1_Cg"><i class="fa fa-youtube" style="color:rgb(33, 37, 41)"></i></a></button>
         </form>
     </nav>
+  </div>
 </body>
 
 </html>
