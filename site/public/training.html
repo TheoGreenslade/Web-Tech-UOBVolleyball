@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>UoB Volleyball</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"></link>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></link>
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
+    <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar_top">
+        <a style="padding-left:15px"> 
+            <img src="img/logo.png" height="50" class="d-inline-block align-top" alt=""></img>
+        </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <form class="form-inline my-2 my-lg-0">              
+
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        THE CLUB
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="aboutClub.html">About the Club</a>
+                          <a class="dropdown-item" href="#">Squads</a>
+                          <a class="dropdown-item" href="committee.html">Committee</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">FAQs</a>
+                          <a class="dropdown-item" href="#">Intramural</a>
+                          <a class="dropdown-item" href="#">Team Bristol</a>
+                          <a class="dropdown-item" href="#">League Tables</a>
+                      </div>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="training.html">TRAINING</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="howToJoin.html">JOIN</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contactUs.html">CONTACT US</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="calender.html">CALENDER</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#">SHOP</a>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="hallOfFame.html">HALL OF FAME</a>
+                    </li>
+              </ul>
+            </form>
+            <!-- <form class="form-inline my-2 my-lg-0">  
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+          </div>
+</nav>
+<div style="padding-top: 60px"><p> </p></div>
+<div class="jumbotron text-center">
+    <h1 class="title">Training</h1>
+</div> 
+
+    <nav style ="padding-left: 10%; padding-right: 10%">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active tabs" id="nav-times-tab" data-toggle="tab" href="#nav-times" role="tab" aria-controls="nav-times" aria-selected="true">Training Times</a>
+          <a class="nav-item nav-link tabs" id="nav-locations-tab" data-toggle="tab" href="#nav-locations" role="tab" aria-controls="nav-locations" aria-selected="false">Training Locations</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent" style ="padding-left: 10%; padding-right: 10%">
+        <div class="tab-pane fade show active in" id="nav-times" role="tabpanel" aria-labelledby="nav-times-tab">
+            <div class="jumbotron text-center">
+                <h1>Training times</h1>
+                <hr class="my-4"></hr>
+                <p class="lead">With all volleyball sessions, noted on this page as 'Hall Time', players are expected to turn up at least 15 minutes earlier to warm up so that the training can begin at the times specified. NOTE: This does not apply to the Development squad sessions or the 7:00am sessions, as the SEH only opens at 7:00am.</p>
+            </div> 
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="jumbotron text-center">
+                        <h1>Men's A</h1>
+                        <hr class="my-4"></hr>
+                        <p class="lead">Hall time - Monday 7:00-8:30am (SEH), Friday 7:30-9:00pm (SEH)</p>
+                        <p>S&C - Tuesday 8:00-9:00pm (Coombe Dingle OWL)</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="jumbotron text-center">
+                        <h1>Women's A</h1>
+                        <hr class="my-4"></hr>
+                        <p class="lead">Hall time - Thursday 6:00-7:30pm (SEH), Saturday 2:00-3:30pm (Cotham School)</p>
+                        <p>S&C - Tuesday 8:00-9:00pm (Coombe Dingle OWL)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="jumbotron text-center">
+                        <h1>Men's B</h1>
+                        <hr class="my-4"></hr>
+                        <p class="lead">Hall time - Monday 7:00-8:30am (SEH), Friday 6:30-7:30pm (SEH)</p>
+                        <p>S&C - Tuesday 8:00-9:00pm (Coombe Dingle OWL)</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="jumbotron text-center">
+                        <h1>Women's B</h1>
+                        <hr class="my-4"></hr>
+                        <p class="lead">Hall time - Thursday 6:00-7:30pm (SEH), Saturday 3:30-5:00pm (Cotham School)</p>
+                        <p>S&C - Tuesday 8:00-9:00pm (Coombe Dingle OWL)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-locations" role="tabpanel" aria-labelledby="nav-locations-tab">
+            <div class="jumbotron text-center">
+                <h1>Training Locations</h1>
+            </div> 
+        
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <p class="lead">Regular Training</p>
+                <hr class="my-4"></hr>
+                <p>Most of our volleyball sessions and all of our home games take place at the University of Bristol's Centre for Sports Exercise and Health, more commonly referred to as the SEH. The sports hall is on the third floor of the building (above the univeristy gym) and accommodates two full sized volleyball courts, as well as ample viewing room on the balcony to support our teams while they play. This facility can be conveniently found in the heart of the University campus on Tyndall Avenue.</p>
+                <p>Some additional training sessions we provide will take place at Cotham School, which is just up the road from the SEH. Here can be found one volleyball court, and is also in an easily accessible location.</p>
+                <hr class="my-4"></hr>
+                <div class="row">
+                    <div class="col-sm-6">
+                      <p>SEH</p>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9943.780727663878!2d-2.6030822!3d51.4591629!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x67e96b9fc3f42fb6!2sUniversity%20of%20Bristol%20Indoor%20Sports%20Centre!5e0!3m2!1sen!2suk!4v1584286777702!5m2!1sen!2suk" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                    <div class="col-sm-6">
+                      <p>Cotham School</p>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.702378456665!2d-2.6043014843449175!3d51.46362062172437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48718dddd86b61cb%3A0xfef4171c60aa83d0!2sCotham%20School!5e0!3m2!1sen!2suk!4v1584287398493!5m2!1sen!2suk" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+              </div>
+             </div>
+        
+             <div class="jumbotron jumbotron-fluid">
+               <div class="container">
+                  <p class="lead">Strength and Conditioning</p>
+                  <hr class="my-4"></hr>
+                  <p>Our Strength and Conditioning trainings take place at the large off campus sports complex that many of the University of Bristol's sports teams call home: Coombe Dingle. Located on the other side of the Downs, Coombe is a short bus ride for those based in the city, or a short walk for those in Stoke Bishop. The committed few will even jog or cycle to strength and conditioning sessions for a warm up</p> 
+                  <div style="text-align: center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2836478976437!2d-2.6329644843440567!3d51.48966211982128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871927654c2dcff%3A0x2d054c75b7340cf5!2sCoombe%20Dingle%20Sports%20Complex!5e0!3m2!1sen!2suk!4v1584287993113!5m2!1sen!2suk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+
+
+            <!-- <div class="tab-pane active in" id="one"> <p>Tab one content</p> </div>  -->
+
+
+  <nav class="navbar navbar-light bg-light">
+      <form class="form-inline">
+        <button class="btn" type = "button" style="font-size: 40px"><a href="https://www.facebook.com/UoBvolleyballclub"><i class="fa fa-facebook" style="color:rgb(33, 37, 41)"></i></a></button>
+        <button class="btn" type = "button" style="font-size: 40px"><a href="https://www.instagram.com/uobvolleyball/"><i class="fa fa-instagram" style="color:rgb(33, 37, 41)"></i></a></button>
+        <button class="btn" type = "button" style="font-size: 40px"><a href="https://twitter.com/uobvolleyball"><i class="fa fa-twitter" style="color:rgb(33, 37, 41)"></i></a></button>
+        <button class="btn" type = "button" style="font-size: 40px"><a href="https://www.youtube.com/channel/UCH9R8BUpGsMqHVsIj7O1_Cg"><i class="fa fa-youtube" style="color:rgb(33, 37, 41)"></i></a></button>
+      </form>
+  </nav>
+</body>
+
+</html>
