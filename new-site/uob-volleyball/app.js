@@ -4,6 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('express-handlebars');
+var sqlite3 = require('sqlite3').verbose();
+//This connects the server with the database
+let db = new sqlite3.Database('database.db', sqlite3.OPEN_READWRITE, (err) => {
+  if(err) {
+    console.error(err.message);
+  }
+  console.log('Connected to the database.');
+});
 
 var indexRouter = require('./routes/index');
 
