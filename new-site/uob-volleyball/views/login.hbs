@@ -9,17 +9,45 @@
         <div class="row">
             <section id="login" class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <h3 class="text-center">Login</h3>
-                <form action="/login_user" method="post">
+                <form action="login/login_user" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-8">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="username" name="username" aria-describedby="emailNameHelp" placeholder="email@address.com" required="required"/>
+                            <input type="email" class="form-control" id="email_css" name="loginEmail" aria-describedby="emailNameHelp" placeholder="email@address.com" required="required"/>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="login_password" name="password" placeholder="Password" required="required"/>
+                            <input type="password" class="form-control" id="login_password" name="loginPassword" placeholder="Password" required="required"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                
+                
+                <h3 class="text-center">Register</h3>
+                <form action="login/register_user" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="registerEmailCss" name="registerEmail" aria-describedby="emailNameHelp" placeholder="email@address.com" required="required"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <label for="text">Username</label>
+                            <input type="text" class="form-control" id="registerUsernameCss" name="registerUsername" placeholder="Username" required="required"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="registerPasswordCss" name="registerPassword" placeholder="Password" required="required"/>
                         </div>
                     </div>
                     <div class="form-row">

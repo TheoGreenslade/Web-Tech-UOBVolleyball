@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('express-handlebars');
 var sqlite3 = require('sqlite3').verbose();
+var router = express.Router();
+var bodyParser = require('body-parser');
 //This connects the server with the database
 var db = new sqlite3.Database('database.db', sqlite3.OPEN_READWRITE, (err) => {
   if(err) {
@@ -14,6 +16,7 @@ var db = new sqlite3.Database('database.db', sqlite3.OPEN_READWRITE, (err) => {
 });
 
 var indexRouter = require('./routes/index');
+var loginRouter = require('./routes/login');
 
 var app = express();
 
@@ -29,6 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
