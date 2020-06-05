@@ -7,7 +7,7 @@
 <li>X for PNG</li>
 <li>X for SVG</li>
 <li>X for Server</li>
-Currently between C and B:
+The server section is a load of checkboxes:
 port numbers: No Idea
 url validation: Almost sure express automatically handles most of the url validation, 
 the rest is handled by the server stuff he had in his sample server, however just in case I added
@@ -16,6 +16,12 @@ content negotiation: No idea
 redirection: We use redirects for login system a few times - probably not what he wants.
 utf-8: No Idea
 The site is HTTPS certified and can run with https -although the certificate is not by a verified authority-.
+We should be at least on a B here since https is an A-category task.
+We also use cookies for the session handler as part of the login system.
+Security issues: 
+	"app.use(helmet)" + npm install helmet prevents - protects against attacks on express
+	SQLInjection-proof thanks to prepared statements with ?
+	Prevent cross-site scripting using templating engine "handlebars"
 <li>X for Database</li>
 We have a insert and a select Query, we use callbacks, so we are at a B.
 To get to A we probably need to add a Shop
