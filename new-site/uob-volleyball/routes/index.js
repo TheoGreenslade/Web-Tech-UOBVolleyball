@@ -25,7 +25,7 @@ router.get('/login', function(req, res, next) {
     var user = null;
     if(req.user) user = {id: req.user.id};
   res.render('login', { 
-            user: null,
+            user: user,
   });
 });
 
