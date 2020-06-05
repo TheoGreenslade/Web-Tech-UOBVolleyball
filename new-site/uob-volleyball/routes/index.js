@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
     console.log(user);
     console.log(user==false);
     res.render('index',{
-        error_message: null,
         user: user,
     });
 });
@@ -23,9 +22,9 @@ router.get('/shop', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
+    var user = null;
+    if(req.user) user = {id: req.user.id};
   res.render('login', { 
-            error_message: req.flash('error_message'), 
-            success_message: req.flash('success_message'),
             user: null,
   });
 });
