@@ -57,16 +57,16 @@ passport.use(new LocalStrategy({passReqToCallback: true, usernameField: 'loginEm
         console.log("Hello9");
         if(error) throw error;
         if(!user){
-            req.flash({error_message: 'Unknown user'});
+            req.flash('error_message', 'Unknown user');
             return done(null, false);
         }else{
             if(loginPassword == user.password) {
                 console.log('Success');
-                req.flash({success_message: 'Successfully logged in'});
+                req.flash('success_message', 'Successfully logged in');
                 return done(null, user);
             } else {
-                req.flash({error_message: 'Incorrect password'});
-                        return done(null, false);
+                req.flash('error_message', 'Incorrect password');
+                return done(null, false);
             }
         } 
     }); 
