@@ -12,21 +12,27 @@ router.get('/', function(req, res, next) {
     });
 });
 
-
-/*router.get('/', function(req, res, next) {
-  res.render('index', { title: 'UoB Volleyball' });
-});*/
-
 router.get('/shop', function(req, res, next) {
-  res.render('shop', { title: 'Shop' });
+    var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('shop', { 
+        user: user
+    });
 });
 
 router.get('/login', function(req, res, next) {
     var user = null;
     if(req.user) user = {id: req.user.id};
-  res.render('login', { 
-            user: user,
+    res.render('login', { 
+    user: user
   });
+});
+
+router.get('/logout', function(req, res, next) {
+
+    req.logout();
+    req.flash('success_message', 'Successful Logout.');
+    res.redirect('/login');
 });
 
 module.exports = router;
