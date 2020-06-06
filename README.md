@@ -4,6 +4,9 @@
 <li>X for HTML</li>
 <li>X for CSS</li>
 <li>X for JS</li>
+In the database, the price is saved as an INT, when loading the pages, a simple script multiplies the 
+int by 0.01 and prints it to show the correct price.
+This ensures no rounding errors happen due to floating point algebra.
 <li>X for PNG</li>
 <li>X for SVG</li>
 <li>X for Server</li>
