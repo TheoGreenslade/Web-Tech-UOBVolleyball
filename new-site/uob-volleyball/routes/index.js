@@ -6,7 +6,6 @@ router.get('/', function(req, res, next) {
     var user = null;
     if(req.user) user = {id: req.user.id};
     console.log(user);
-    console.log(user==false);
     res.render('index',{
         user: user,
         title: 'UoB Volleyball'
@@ -15,11 +14,16 @@ router.get('/', function(req, res, next) {
 
 router.get('/shop', function(req, res, next) {
     var user = null;
-    if(req.user) user = {id: req.user.id};
-    res.render('shop', { 
-        user: user,
-        title:'Shop'
+    if(req.user) {
+       user = {id: req.user.id}; 
+       res.render('shop', { 
+       user: user,
+       title:'Shop'
     });
+    } else {
+        req.flash('error_message', 'You must be logged in to access our shop.')
+        res.redirect('/login');
+    }
 });
 
 router.get('/login', function(req, res, next) {
