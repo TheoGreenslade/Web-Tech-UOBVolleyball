@@ -1,4 +1,4 @@
-{{> page/nav}}
+{{> page/nav user=user}}
 <div class="container-fluid" style="padding: 0px">
     <img src="images/home/Volleyball Image2.jpg" class="img-responsive" alt="Responsive image"></img>   
     <div class="overlay">
@@ -7,6 +7,16 @@
         </a>
     </div>
 </div>
+
+<section id="messages">
+    {{#if error_message}} 
+        <div> {{error_message}} </div>
+    {{/if }}
+    {{#if success_message}}
+        <div> {{success_message}} </div>
+    {{/if }}
+</section> 
+
 
 <div style=" background-image: url(images/svg/volleyballBackground.svg); background-size: 100%;">
     <div style = "padding-left: 20%; padding-right: 20%; background-color: transparent;">

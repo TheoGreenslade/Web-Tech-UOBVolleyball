@@ -1,6 +1,15 @@
-{{> page/nav}}
+{{> page/nav user=user}}
 <div class="jumbotron text-center">
     <h1 class="title">Shop</h1>
 </div> 
 <p>products</p>
+
+<section id="messages">
+    {{#if error_message}}
+        <div> {{error_message}} </div>
+    {{/if }}
+    {{#if success_message}}
+        <div> {{success_message}} </div>
+    {{/if }}
+</section>
 {{> page/social-links}}
