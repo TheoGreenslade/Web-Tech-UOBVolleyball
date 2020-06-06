@@ -1,0 +1,79 @@
+{{> page/nav user=user}}
+
+<div class="jumbotron text-center">
+    <h1 class="title">Login or Register</h1>
+</div> 
+
+
+<section id="messages">
+    {{#if error_message}}
+        <div> {{error_message}} </div>
+    {{/if }}
+    {{#if success_message}}
+        <div> {{success_message}} </div>
+    {{/if }}
+</section>
+
+
+<section id="login_register">
+    <div class="container">
+        <div class="row">
+            <section id="login" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                
+                
+                <div class="col-sm-6">
+                <h3 class="text-left">Login</h3>
+                <form action="/login_user" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email_css" name="loginEmail" aria-describedby="emailNameHelp" placeholder="email@address.com" required="required"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="login_password" name="loginPassword" placeholder="Password" required="required"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+                
+                <div class="col-sm-6">
+                <h3 class="text-left">Register</h3>
+                <form action="/register_user" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="registerEmailCss" name="registerEmail" aria-describedby="emailNameHelp" placeholder="email@address.com" required="required"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <label for="text">Username</label>
+                            <input type="text" class="form-control" id="registerUsernameCss" name="registerUsername" placeholder="Username" required="required"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="registerPasswordCss" name="registerPassword" placeholder="Password" required="required"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+{{> page/social-links}}
