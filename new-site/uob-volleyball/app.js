@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+
 //HTTPS Setup
 var http = require('http');
 var https = require('https');
@@ -11,18 +12,10 @@ var fs = require('fs');
 var privateKey  = fs.readFileSync('security/selfsigned.key', 'utf8');
 var certificate = fs.readFileSync('security/selfsigned.crt', 'utf8');
 var credentials = {key: privateKey, cert: certificate};
+
+//Banned paths
 var banned = [];
 banUpperCase('./public/', '');
-
-
-//Database connection setup
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('database.db', sqlite3.OPEN_READWRITE, (err) => {
-  if(err) {
-    console.error(err.message);
-  }
-  console.log('Connected to the database.');
-});
 
 //Express Setup
 var app = express();
@@ -46,13 +39,11 @@ app.use(session({
 app.use(lower);
 app.use(ban);
 
-
 // Handlebars and views setup
 var hbs = require('express-handlebars');
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-
 
 //Passport Setup
 var passport = require('passport');
