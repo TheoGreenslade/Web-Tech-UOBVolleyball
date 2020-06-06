@@ -51,4 +51,36 @@ router.get('/contact-us', function(req, res, next) {
   res.render('contact', { title: 'Contact us' });
 });
 
+router.get('/calender', function(req, res, next) {
+  res.render('calender', { title: 'Calender' });
+});
+
+router.get('/gallery', function(req, res, next) {
+  res.render('gallery', { title: 'Gallery' });
+});
+
+router.get('/squads', function(req, res, next) {
+  res.render('squads', { title: 'Squads' });
+});
+
+router.get('/mens-A', function(req, res, next) {
+  res.render('mensA', { title: 'Mens A Team' });
+});
+
+router.get('/mens-B', function(req, res, next) {
+  res.render('mensB', { title: 'Mens B Team' });
+});
+
+router.get('/womens-A', function(req, res, next) {
+  res.render('womensA', { title: 'Womens A Team' });
+});
+
+router.get('/womens-B', function(req, res, next) {
+  res.render('womensB', { title: 'Womens B Team' });
+});
+
+router.get('/hall-of-fame', function(req, res, next) {
+  res.render('hallOfFame', { title: 'Hall Of Fame' });
+});
+
 module.exports = router;

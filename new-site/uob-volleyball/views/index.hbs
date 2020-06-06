@@ -1,9 +1,9 @@
 {{> page/nav user=user}}
 <div class="container-fluid" style="padding: 0px">
-    <img src="images/home/Volleyball Image2.jpg" class="img-responsive" alt="Responsive image"></img>   
+    <img src="images/home/Volleyball Image2.jpg" class="img-responsive" alt="Responsive image"></img>
     <div class="overlay">
         <a class="icon">
-            <i class="fa fa-angle-down" onclick="scrollDown()" style = "color: white"></i>
+            <i class="fa fa-angle-down" onclick="scrollDown()" style="color: white"></i>
         </a>
     </div>
 </div>
@@ -19,41 +19,62 @@
 
 
 <div style=" background-image: url(images/svg/volleyballBackground.svg); background-size: 100%;">
-    <div style = "padding-left: 20%; padding-right: 20%; background-color: transparent;">
-        <div id = "intro" class="jumbotron jumbotron-fluid" style="background-color: transparent">
+    <div style="padding-left: 10%; padding-right: 10%; background-color: transparent;">
+        <div id="intro" class="jumbotron jumbotron-fluid" style="background-color: transparent; color: white">
             <div class="container" style="padding-bottom: 0px">
-                <h1 class = "title" style="padding-top: 60px">UoB VOLLEYBALL</h1>
-                <hr class="my-4"></hr>
-                <p class="lead" >We are a friendly club open to any student at the University of Bristol. Whether you are a seasoned pro or a complete beginner, you will be able to join the club and play volleyball at your level.</p>
-          
+                <h1 class="title" style="padding-top: 60px;">UoB VOLLEYBALL</h1>
+                <hr class="my-4">
+                </hr>
+                <p class="lead">We are a friendly club open to any student at the University of Bristol. Whether you are
+                    a seasoned pro or a complete beginner, you will be able to join the club and play volleyball at your
+                    level.</p>
+
                 <p class="lead">
-                  We also host a number of unforgettable socials each term giving you a chance to get to know your team members as well as everyone else in the club.
+                    We also host a number of unforgettable socials each term giving you a chance to get to know your
+                    team members as well as everyone else in the club.
                 </p>
                 <p class="lead">
-                  <a href = "#" style = "color: red;">Learn more</a>
+                    <a hreAf="/about-the-club" style="color: white;">Learn more</a>
                 </p>
             </div>
         </div>
     </div>
+    <div style="align-items: center;height: calc(100vw * 0.4); padding-left:20%;padding-right:20%;padding-bottom:5%">
+        <iframe width="100%" height="100%" style="align-self: center" src="https://www.youtube.com/embed/4T4FMWl-8ZM"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
 
-    <div class="row" style = "padding: 20px; padding-top: 0">
+    <div class="row" style="padding: 20px; padding-top: 0; padding-bottom: 5%">
         <div class="col-sm-2">
-            <button type="button" class="btn btn-danger btn-lg btn-block red_button"><a href = "howToJoin.html" style = "color: white">JOIN</a></button>
+            <a href="/about-the-club">
+                <button type="button" class="btn btn-light btn-lg btn-block red_button">THE CLUB</button>
+            </a>
         </div>
         <div class="col-sm-2">
-            <button type="button" class="btn btn-danger btn-lg btn-block red_button">SQUADS</button>
+            <a href="/training">
+                <button type="button" class="btn btn-light btn-lg btn-block red_button">TRAINING</button>
+            </a>
         </div>
         <div class="col-sm-2">
-            <button type="button" class="btn btn-danger btn-lg btn-block red_button">SHOP</button>
+            <a href="/squads">
+                <button type="button" class="btn btn-light btn-lg btn-block red_button">SQUADS</button>
+            </a>
         </div>
         <div class="col-sm-2">
-            <button type="button" class="btn btn-danger btn-lg btn-block red_button"><a href = "training.html" style = "color: white">TRAINING</a></button>
+            <a href="/contact-us">
+                <button type="button" class="btn btn-light btn-lg btn-block red_button">CONTACT US</button>
+            </a>
         </div>
         <div class="col-sm-2">
-          <button type="button" class="btn btn-danger btn-lg btn-block red_button"><a href = "calender.html" style = "color: white">CALENDER</a></button>
+            <a href="/calender">
+                <button type="button" class="btn btn-light btn-lg btn-block red_button">CALENDER</button>
+            </a>
         </div>
         <div class="col-sm-2">
-            <button type="button" class="btn btn-danger btn-lg btn-block red_button">LEAGUE TABLES</button>
+            <a href="/shop">
+                <button type="button" class="btn btn-light btn-lg btn-block red_button">SHOP</button>
+            </a>
         </div>
     </div>
 </div>
