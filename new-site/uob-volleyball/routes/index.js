@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
     console.log(user==false);
     res.render('index',{
         user: user,
+        title: 'UoB Volleyball'
     });
 });
 
@@ -16,7 +17,8 @@ router.get('/shop', function(req, res, next) {
     var user = null;
     if(req.user) user = {id: req.user.id};
     res.render('shop', { 
-        user: user
+        user: user,
+        title:'Shop'
     });
 });
 
@@ -24,7 +26,8 @@ router.get('/login', function(req, res, next) {
     var user = null;
     if(req.user) user = {id: req.user.id};
     res.render('login', { 
-    user: user
+    user: user,
+    title: 'Login & Register'
   });
 });
 
@@ -36,51 +39,111 @@ router.get('/logout', function(req, res, next) {
 });
 
 router.get('/training', function(req, res, next) {
-  res.render('training', { title: 'Training' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('training', { 
+        user: user,
+        title: 'Training'
+    });
 });
 
 router.get('/about-the-club', function(req, res, next) {
-  res.render('about', { title: 'About' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('about', { 
+        user: user,
+        title: 'About the club'
+    });
 });
 
 router.get('/committee', function(req, res, next) {
-  res.render('committee', { title: 'Committee' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('committee', { 
+        user: user,
+        title: 'Committee'
+    });
 });
 
 router.get('/contact-us', function(req, res, next) {
-  res.render('contact', { title: 'Contact us' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('contact', { 
+        user: user,
+        title: 'Contact us'
+    });
 });
 
 router.get('/calender', function(req, res, next) {
-  res.render('calender', { title: 'Calender' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('calender', { 
+        user: user,
+        title: 'Calender'
+    });
 });
 
 router.get('/gallery', function(req, res, next) {
-  res.render('gallery', { title: 'Gallery' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('gallery', { 
+        user: user,
+        title: 'Gallery'
+    });
 });
 
 router.get('/squads', function(req, res, next) {
-  res.render('squads', { title: 'Squads' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('squads', { 
+        user: user,
+        title: 'Squads'
+    });
 });
 
 router.get('/mens-A', function(req, res, next) {
-  res.render('mensA', { title: 'Mens A Team' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('mensA', { 
+        user: user,
+        title: 'Mens A Team'
+    });
 });
 
 router.get('/mens-B', function(req, res, next) {
-  res.render('mensB', { title: 'Mens B Team' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('mensB', { 
+        user: user,
+        title: 'Mens B Team'
+    });
 });
 
 router.get('/womens-A', function(req, res, next) {
-  res.render('womensA', { title: 'Womens A Team' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('womensA', { 
+        user: user,
+        title: 'Womens A Team'
+    });
 });
 
 router.get('/womens-B', function(req, res, next) {
-  res.render('womensB', { title: 'Womens B Team' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('womensB', { 
+        user: user,
+        title: 'Womens B Team'
+    });
 });
 
 router.get('/hall-of-fame', function(req, res, next) {
-  res.render('hallOfFame', { title: 'Hall Of Fame' });
+  var user = null;
+    if(req.user) user = {id: req.user.id};
+    res.render('hallOfFame', { 
+        user: user,
+        title: 'Hall of fame'
+    });
 });
 
 module.exports = router;
