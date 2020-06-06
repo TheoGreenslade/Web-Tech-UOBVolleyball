@@ -2,8 +2,6 @@
 {{> messages}}
 {{> page/titleBanner}}
 
-<p>products</p>
-
 <section id="messages">
     {{#if error_message}}
         <div> {{error_message}} </div>
@@ -12,4 +10,46 @@
         <div> {{success_message}} </div>
     {{/if }}
 </section>
+
+
+<ul>
+    {{#each products}}
+        <div id={{id}}>
+          <div class="jumbotron">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="container-fluid">
+                    {{#if imagepath}}
+                  <img src="{{imagepath}}" class="img-responsive" alt="Responsive image"></img>
+                    {{else}}
+                  <img src="images/shop/noImage.svg" class="img-responsive" alt="Responsive image"></img>
+                    {{/if}}
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <h1>{{name}}</h1>
+                <p>
+                  {{description}}
+                </p>
+                <p>                  
+                  <script>
+                    var price = {{price}} * 0.01;
+                    document.write("PRICE: £" + price.toFixed(2));
+                  </script>
+                </p>
+                <div>
+                    <a href="/purchase/{{id}}"><button type="submit" class="btn btn-lg btn-block btn-danger">Purchase</button></a>
+                </div>            
+              </div>
+            </div>
+          </div>
+        </div>
+    {{/each}}
+</ul>
+
+
+
+
+
+
 {{> page/social-links}}

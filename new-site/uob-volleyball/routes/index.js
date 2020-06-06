@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var shop_db = require('./shop_db.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,11 +16,17 @@ router.get('/', function(req, res, next) {
 router.get('/shop', function(req, res, next) {
     var user = null;
     if(req.user) {
-       user = {id: req.user.id}; 
-       res.render('shop', { 
-       user: user,
-       title:'Shop'
-    });
+       user = {id: req.user.id};
+       shop_db.getProducts(function(error, products) {
+           if(error) throw error;
+           console.log(products);
+            res.render('shop', {
+                products: products,
+                user: user,
+                title:'Shop'
+            });
+       });
+
     } else {
         req.flash('error_message', 'You must be logged in to access our shop.')
         res.redirect('/login');
