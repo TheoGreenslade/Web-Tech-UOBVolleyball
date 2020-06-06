@@ -1,5 +1,5 @@
 var sqlite3 = require('sqlite3').verbose();
-var crypto = require('crypto');
+var bcrypt = require('bcrypt');
 
 var db = new sqlite3.Database('database.db', sqlite3.OPEN_READWRITE, (err) => {
   if(err) {
@@ -41,6 +41,13 @@ exports.selectUserById = function(id, callback){
             callback(error, rows[0]);
         });
     });
+}
+
+exports.passwordMatch = function(inputPassword, databasePassword, callback){
+    bcrypt.compare(inputPassword, databasePassword, function(error, result){
+        if(error) throw error;
+        callback(null, result);
+    })
 }
 
 

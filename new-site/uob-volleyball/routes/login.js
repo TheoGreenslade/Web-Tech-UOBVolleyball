@@ -3,12 +3,7 @@ var router = express.Router();
 var login_db = require('./login_db.js');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('database.db', sqlite3.OPEN_READWRITE, (err) => {
-  if(err) {
-    console.error(err.message);
-  }
-});
+var bcrypt = require('bcrypt');
 
 
 
@@ -17,19 +12,30 @@ router.post('/register_user', function(req, res, next) {
     var username = req.body.registerUsername;
     var password = req.body.registerPassword;
     
-    var JSONUser = {
-        email: email,
-        password: password,
-        username: username
-    }
-    
-    login_db.addNewUser(JSONUser);  
-    req.flash('success_message', 'Thank you for joining us!');
-    
-    res.render('login', {
-        success_message: req.flash('success_message'),
-        error_message: null,
-        user: null
+    login_db.selectUserByEmail(email, function(error, user) {
+        if(user) {
+            req.flash('error_message', 'email already present in our database.');
+            res.render('login', {
+                error_message: req.flash('error_message'),
+                user: null
+            });
+        } else {
+            var hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+            var user = {
+                email: email,
+                password: hashedPassword,
+                username: username
+            }
+
+            login_db.addNewUser(user);  
+            req.flash('success_message', 'Thank you for joining us!');
+
+            res.render('login', {
+                success_message: req.flash('success_message'),
+                error_message: null,
+                user: null
+            });
+        }    
     });
 });
 
@@ -60,14 +66,18 @@ passport.use(new LocalStrategy({passReqToCallback: true, usernameField: 'loginEm
             req.flash('error_message', 'Unknown user');
             return done(null, false);
         }else{
-            if(loginPassword == user.password) {
-                console.log('Success');
-                req.flash('success_message', 'Successfully logged in');
-                return done(null, user);
-            } else {
-                req.flash('error_message', 'Incorrect password');
-                return done(null, false);
-            }
+            login_db.passwordMatch(loginPassword, user.password, (error, match) => {
+                if(error) throw error;
+                if(match) {
+                    console.log('User logged in.');
+                    req.flash('success_message', 'Successfully logged in');
+                    return done(null, user);
+                } else {
+                    req.flash('error_message', 'Password mismatch');
+                    return done(null, false);
+                }
+
+            });
         } 
     }); 
 }));
