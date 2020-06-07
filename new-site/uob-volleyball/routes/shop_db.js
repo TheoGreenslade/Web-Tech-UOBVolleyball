@@ -12,8 +12,21 @@ exports.getProducts = function(callback){
     db.serialize(( ) => {
        db.all(query, function(error, rows) {
             if(error) throw error;
-           console.log(rows);
            callback(error, rows);           
+       });
+    });
+}
+
+exports.insertPurchase = function(userId, productId) {
+    var query = "INSERT INTO Purchase (user_id, product_id) VALUES (?, ?);";
+    
+    db.serialize(( ) => {
+       db.run(query, [userId, productId], function(error) {
+           if(error) {
+               console.log(error);
+           } else {
+               console.log('Purchase added to database');
+           }            
        });
     });
 }

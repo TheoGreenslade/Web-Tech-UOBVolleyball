@@ -116,8 +116,10 @@ function banUpperCase(root, folder) {
 var router = express.Router();
 var index = require('./routes/index');
 var login = require('./routes/login');
+var shop = require('./routes/shop');
 app.use('/', index);
 app.use('/', login);
+app.use('/', shop);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
