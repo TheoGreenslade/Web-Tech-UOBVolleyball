@@ -6,3 +6,7 @@ function scrollDown(){
 $(document).ready(function(){
     $("#myModal").modal('show');
 });
+
+// function writeQuotes () {
+//     console.log('quote');
+// }
