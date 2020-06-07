@@ -21,7 +21,7 @@ exports.addNewUser = function(user){
     });
 }
 
-exports.selectUserByEmail = function(email, callback){
+exports.selectUserByEmail = function(email, callback) {
     var query = "SELECT * FROM User WHERE email = ?;";
     
     db.serialize(( ) => {

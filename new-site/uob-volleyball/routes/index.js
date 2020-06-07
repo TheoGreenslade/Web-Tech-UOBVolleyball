@@ -19,7 +19,6 @@ router.get('/shop', function(req, res, next) {
        user = {id: req.user.id};
        shop_db.getProducts(function(error, products) {
            if(error) throw error;
-           console.log(products);
             res.render('shop', {
                 products: products,
                 user: user,
