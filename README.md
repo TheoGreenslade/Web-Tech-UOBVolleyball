@@ -2,13 +2,19 @@
 
 <ul>
 <li>X for HTML</li>
+We used the Bootstrap framework to create multiple pages with a large amount of html content. On each page we combined a huge number of Bootstrap components as well as creating our own componets out of the basic html elements.
 <li>X for CSS</li>
+We applied lots of css code to all of our html elements in order to create the perfect style of our website. This included combining the classes from the Bootstrap stylesheet with lots of our own custom css code.
 <li>X for JS</li>
 In the database, the price is saved as an INT, when loading the pages, a simple script multiplies the 
 int by 0.01 and prints it to show the correct price.
 This ensures no rounding errors happen due to floating point algebra.
 <li>X for PNG</li>
+We editied PNG images for the title page of our website and the thumbnail for a video on our website. They were both editted in similar ways. For one of the images we made it wider by duplicating part of the image airbrushing it to merge it into the original image again. Then we altered the colour levels of the image and added a layer to lightly darken the corners of the image in order to make the colour on the subject stand out and be more dramatic. Finally Text was positioned in the centre of the image.
+	
+Additionally, we created a title image for one of our pages but creating a collage of multiple images then applying a desaturation filter and adding text over the top.
 <li>X for SVG</li>
+We created a correctly proportioned SVG volleyball by creating curved paths and then using grouping and rotational transformations to repeat the curves around the ret of the ball. We also generated a repeating SVG pattern for the background of a page by creating the one individual image to be duplicated. Finally, we made SVG artwork by recreating images of people playing volleyball in SVG form.
 <li>X for Server</li>
 The server section is a load of checkboxes:
 port numbers: No Idea
