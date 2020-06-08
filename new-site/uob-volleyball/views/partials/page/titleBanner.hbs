@@ -1,3 +1,11 @@
-<div class="jumbotron text-center" style="background-color: #c82433ff; color:white">
+<div id="titleBanner" class="jumbotron text-center">
     <h1 class="title">{{title}}</h1>
-</div> 
+</div>
+
+<script>
+    const title = document.getElementById("titleBanner");
+
+    const tltitle = new TimelineMax();
+
+    tltitle.fromTo(title,1, {y:-170}, {y:0,ease: Power2.easeInOut})
+</script>

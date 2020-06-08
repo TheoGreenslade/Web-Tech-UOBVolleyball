@@ -1,52 +1,41 @@
 {{> page/nav user=user}}
 {{> messages}}
-<div class="container-fluid" style="padding: 0px">
-    <img src="images/home/Volleyball Image2.jpg" class="img-responsive" alt="Responsive image"></img>
-    <div class="overlay">
+
+<section class="img-section">
+    <div class="homeImage">
+        <img src="images/home/Volleyball Image2.jpg">
         <a class="icon">
-            <i class="fa fa-angle-down" onclick="scrollDown()" style="color: white"></i>
+            <i class="fa fa-angle-down arrow" onclick="scrollDown()"></i>
         </a>
     </div>
-</div>
+</section>
 
-<section id="messages">
-    {{#if error_message}} 
-        <div> {{error_message}} </div>
-    {{/if }}
-    {{#if success_message}}
-        <div> {{success_message}} </div>
-    {{/if }}
-</section> 
+<div class="svgBall">
+    <div id="intro" class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 id="home-title" class="title">UoB VOLLEYBALL</h1>
+            <hr class="my-4">
+            </hr>
+            <p class="lead text">We are a friendly club open to any student at the University of Bristol. Whether you are
+                a seasoned pro or a complete beginner, you will be able to join the club and play volleyball at your
+                level.</p>
 
-
-<div style=" background-image: url(images/svg/volleyballBackground.svg); background-size: 100%;">
-    <div style="padding-left: 10%; padding-right: 10%; background-color: transparent;">
-        <div id="intro" class="jumbotron jumbotron-fluid" style="background-color: transparent; color: white">
-            <div class="container" style="padding-bottom: 0px">
-                <h1 class="title" style="padding-top: 60px;">UoB VOLLEYBALL</h1>
-                <hr class="my-4">
-                </hr>
-                <p class="lead">We are a friendly club open to any student at the University of Bristol. Whether you are
-                    a seasoned pro or a complete beginner, you will be able to join the club and play volleyball at your
-                    level.</p>
-
-                <p class="lead">
-                    We also host a number of unforgettable socials each term giving you a chance to get to know your
-                    team members as well as everyone else in the club.
-                </p>
-                <p class="lead">
-                    <a hreAf="/about-the-club" style="color: white;">Learn more</a>
-                </p>
-            </div>
+            <p class="lead text">
+                We also host a number of unforgettable socials each term giving you a chance to get to know your
+                team members as well as everyone else in the club.
+            </p>
+            <p class="lead">
+                <a class="link" href="/about-the-club">Learn more</a>
+            </p>
         </div>
     </div>
-    <div style="align-items: center;height: calc(100vw * 0.4); padding-left:20%;padding-right:20%;padding-bottom:5%">
-        <iframe width="100%" height="100%" style="align-self: center" src="https://www.youtube.com/embed/4T4FMWl-8ZM"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+
+    <div class="video">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4T4FMWl-8ZM" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <div class="row" style="padding: 20px; padding-top: 0; padding-bottom: 2%">
+    <div class="row">
         <div class="col-sm-2">
             <a href="/about-the-club">
                 <button type="button" class="btn btn-light btn-lg btn-block red_button">THE CLUB</button>
@@ -78,16 +67,18 @@
             </a>
         </div>
     </div>
-    <div class="row" style="padding: 20px; padding-top: 0; padding-bottom: 2%; width:100%">
-        <div class="jumbotron jumbotron-fluid" style="background-color: transparent; color: white;width:100%">
-            <div class="container" style="padding-bottom: 0px; display:flex; flex-direction:column; align-items:center">
-                <p class="lead">
+    <div class="row">
+        <div id="quote-div"class="jumbotron jumbotron-fluid quote">
+            <div class="container quote">
+                <p class="lead centre-text text">
                     Quote of the day
                 </p>
-                <p id=quote></p>
+                <p id=quote class="text"></p>
             </div>
             <script src="javascripts/quotes.js"></script>
         </div>
     </div>
 </div>
+
 {{> page/social-links}}
+<script src="javascripts/animations/home-animations.js"></script>
