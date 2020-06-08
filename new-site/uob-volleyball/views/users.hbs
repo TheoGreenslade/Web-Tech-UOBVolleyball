@@ -2,15 +2,26 @@
 {{> messages}}
 {{> page/titleBanner}}
 
+<div class="list">
 {{#each users}}
-    <div class="jumbotron">
-        <div class="row">
-            <h3>Username: {{username}} Email: {{email}} </h3> 
+    <div class="side-padding">
+        <div class="row list-item text">
+            <div class="col-sm-4">
+                <p>Username: {{username}}</p>
+            </div>
+            <div class="col-sm-4">
+                <p>Email: {{email}} </p>
+            </div>
+
+            {{!-- <h3>Username: {{username}} Email: {{email}} </h3>  --}}
             
             {{#if admin}}
-                <p>Is already an Admin!</p>
+            <div class="col-sm-4">
+                <p>Is already an Admin! </p>
+            </div>
+                {{!-- <p>Is already an Admin!</p> --}}
             {{else}}
-                <div>
+                <div class="col-sm-4">
                     <form action="/add_admin" method="post">
                         <button type="submit" class="btn btn-lg btn-danger" name="userId" value="{{id}}">Make Admin</button>
                     </form>
@@ -19,5 +30,6 @@
         </div>
     </div>
 {{/each}}
+</div>  
 
 {{> page/social-links}}
