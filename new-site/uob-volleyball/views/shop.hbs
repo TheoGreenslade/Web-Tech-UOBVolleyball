@@ -2,6 +2,23 @@
 {{> messages}}
 {{> page/titleBanner}}
 
+<form action="/shop" method="post">
+<div class="form-row">
+        <div class="form-group">
+            <label for="orderBy">Order By</label>
+            <select class="form-control" id="orderBy" name="orderByThis" required="required">
+                {{#each orderByOptions}}
+                    <option value = "{{id}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    
+        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <button type="submit" class="btn btn-danger">Order</button>
+        </div>
+    </div>  
+</form>
+
 
 <div class="jumbotron">
     <h2>Categories to show</h2>
@@ -17,7 +34,7 @@
 {{#each products}}
     <p>
         <script> 
-            if (document.getElementById("inlineCheckbox"+{{category}}).checked) {
+            if (document.getElementById("inlineCheckbox"+{{category_id}}).checked) {
                 document.write("I should display this item");
             }
         </script>
