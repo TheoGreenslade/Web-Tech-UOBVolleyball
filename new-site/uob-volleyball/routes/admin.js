@@ -103,14 +103,7 @@ router.post('/add_product', function(req, res, next) {
 
             admin_db.insertProduct(product);  
             req.flash('success_message', 'Product added.');
-            user = {id: req.user.id}
-            res.render('admin', {
-                success_message: req.flash('success_message'),
-                title: 'Admin page',
-                error_message: null,
-                user: user,
-                admin: true
-            });
+            res.redirect('/admin');
         }    
     });
 });
@@ -125,14 +118,7 @@ router.post('/add_category', function(req, res, next) {
         } else {
             admin_db.insertCategory(name);  
             req.flash('success_message', 'Category added.');
-            user = {id: req.user.id}
-            res.render('admin', {
-                success_message: req.flash('success_message'),
-                title: 'Admin page',
-                error_message: null,
-                user: user,
-                admin: true
-            });
+            res.redirect('/admin');
         }    
     });
 });
@@ -143,5 +129,14 @@ router.post('/add_admin', function(req, res, next) {
     req.flash('success_message', 'User added as admin.');
     res.redirect('/users');
 });
+
+router.post('/process_order', function(req, res, next) {
+    var orderId = req.body.processedOrder;
+    admin_db.setProcessed(orderId);
+    req.flash('success_message', 'Order processed successfully.');
+    res.redirect('/orders');
+});
+
+
 
 module.exports = router;
