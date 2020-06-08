@@ -3,24 +3,40 @@
 {{> page/titleBanner}}
 
 <div class="list">
+        <div class="side-padding">
+        <div class="row list-item list-group-item-danger text">
+            <div class="col-sm-3">
+                <p>User</p>
+            </div>
+            <div class="col-sm-3">
+                <p> Purchase</p>
+            </div>
+            
+            <div class="col-sm-3">
+                <p> Bought On</p>
+            </div>
+            <div class="col-sm-3">
+                <p>State</p> 
+            </div>
+        </div>
+        </div>
 {{#each orders}}
     <div class="side-padding">
         <div class="row list-item text">
             <div class="col-sm-3">
-                <p>User: {{email}} </p>
+                <p>{{email}} </p>
             </div>
             <div class="col-sm-3">
-                <p> Purchase: {{product}}</p>
+                <p>{{product}}</p>
             </div>
             
             <div class="col-sm-3">
-                <p> Bought On: {{date}}</p>
+                <p>{{date}}</p>
             </div>
             {{#if processed}}
             <div class="col-sm-3">
                 <p>Order processed </p>
             </div>
-                <p>Order processed</p>
             {{else}}
                 <div class="col-sm-3">
                     <form action="/add_admin" method="post">

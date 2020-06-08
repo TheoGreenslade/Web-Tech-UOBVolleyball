@@ -31,16 +31,18 @@ exports.getCategories = function(callback){
     });   
 }
 
-exports.getOrderedProducts = function(orderByThis, callback){
+exports.getOrderedProducts = function(orderByThis, order, callback){
     console.log("In function: " + orderByThis);
     var query = "SELECT Product.id AS product_id, Product.imagepath AS imagePath, Product.name AS product_name, \
                     Product.description AS description, Product.price AS price, Product.discount AS discount, \
                     Category.id AS category_id, Category.name AS category_name FROM Product \
                     JOIN Category on Product.category = Category.id \
-                    ORDER BY ? ;"; 
+                    ORDER BY "+orderByThis+ " " + order +" ;"; 
+    //Building the query with "..." + var + "..." like this can lead to SQL Injection vulnerabilities however apprently the ORDER BY does not work with prepared
+    //Statements i.e. "... ? ..." see https://github.com/mapbox/node-sqlite3/issues/178.
     
     db.serialize(( ) => {
-       db.all(query, [orderByThis], function(error, rows) {
+       db.all(query, function(error, rows) {
            console.log(query);
             if(error) throw error;
            callback(error, rows);           
@@ -59,7 +61,7 @@ exports.getOrderByOptions = function() {
     };
     var option3 = {
         name: 'Category', 
-        id: 'Product.category'
+        id: 'Category.name'
     };
     var options = { option1, option2, option3};
     return options;

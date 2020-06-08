@@ -8,7 +8,7 @@ router.get('/shop', function(req, res, next) {
             var admin = false;
     if(req.user.admin) admin = true;
        user = {id: req.user.id};
-       shop_db.getOrderedProducts( 'Product.id', function(error, products) {
+       shop_db.getOrderedProducts( 'Product.id', 'ASC',function(error, products) {
            if(error) throw error;
            shop_db.getCategories(function(error, categories) {
                 if(error) throw error;
@@ -50,8 +50,9 @@ router.post('/shop', function(req, res, next) {
     if(req.user.admin) admin = true;
        user = {id: req.user.id};
         var orderByThis = req.body.orderByThis;
+        var order = req.body.order;
         console.log(orderByThis);
-       shop_db.getOrderedProducts( orderByThis, function(error, products) {
+       shop_db.getOrderedProducts( orderByThis, order, function(error, products) {
            if(error) throw error;
            shop_db.getCategories(function(error, categories) {
                 if(error) throw error;
