@@ -2,16 +2,27 @@
 {{> messages}}
 {{> page/titleBanner}}
 
+<div class="list">
 {{#each orders}}
-    <div class="jumbotron">
-        <div class="row">
-            <h3>User: {{email}} </h3> 
-            <h3>Purchase: {{product}}</h3> 
-            <h3>Bought On: {{date}}</h3>
+    <div class="side-padding">
+        <div class="row list-item text">
+            <div class="col-sm-3">
+                <p>User: {{email}} </p>
+            </div>
+            <div class="col-sm-3">
+                <p> Purchase: {{product}}</p>
+            </div>
+            
+            <div class="col-sm-3">
+                <p> Bought On: {{date}}</p>
+            </div>
             {{#if processed}}
+            <div class="col-sm-3">
+                <p>Order processed </p>
+            </div>
                 <p>Order processed</p>
             {{else}}
-                <div>
+                <div class="col-sm-3">
                     <form action="/add_admin" method="post">
                         <button type="submit" class="btn btn-lg btn-danger" name="orderId" value="{{id}}">Mark as Processed</button>
                     </form>
@@ -20,5 +31,5 @@
         </div>
     </div>
 {{/each}}
-
+</div>
 {{> page/social-links}}

@@ -12,28 +12,30 @@
                 {{/each}}
             </select>
         </div>
-    
+
         <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <button type="submit" class="btn btn-danger">Order</button>
         </div>
-    </div>  
+    </div>
 </form>
 
 
-<div class="jumbotron">
-    <h2>Categories to show</h2>
+<div class="text">
+  <div class="row">
+    <h2>Categories to show: </h2>
     {{#each categories}}
     <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox{{id}}" value="option{{id}}" checked>
-            <label class="form-check-label" for="inlineCheckbox{{id}}">{{name}}</label>
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox{{id}}" value="option{{id}}" checked>
+      <label class="form-check-label" for="inlineCheckbox{{id}}">{{name}}</label>
     </div>
     {{/each}}
+  </div>
 </div>
-    
+
 
 {{#each products}}
     <p>
-        <script> 
+        <script>
             if (document.getElementById("inlineCheckbox"+{{category_id}}).checked) {
                 document.write("I should display this item");
             }
@@ -53,10 +55,10 @@
             </div>
           </div>
           <div class="col-sm-8">
-            <h1>{{product_name}}</h1>   
+            <h1>{{product_name}}</h1>
             <h2>Category: {{category_name}}</h2>
             <p>{{description}}</p>
-            <p>                  
+            <p>
               <script>
                 var price = {{price}} * 0.01;
                     {{#if discount}}
@@ -69,11 +71,13 @@
                 <form action="/purchase" method="post">
                     <button type="submit" class="btn btn-lg btn-block btn-danger" name="productId" value="{{product_id}}">Purchase</button>
                 </form>
-            </div>            
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 {{/each}}
 
 {{> page/social-links}}
