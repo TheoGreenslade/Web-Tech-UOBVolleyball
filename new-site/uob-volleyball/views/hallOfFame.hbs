@@ -1,13 +1,12 @@
 {{> page/nav}}
 {{> messages}}
 <section class="img-section">
-    <div class="homeImage">
+    <div class="homeImage hallImage">
         <img src="images/hall-of-fame/hallOfFame.png">
     </div>
 </section>
 <script>
     const homeImage = document.querySelector('.homeImage');
-    const arrow = document.querySelector('.icon');
 
     const tl = new TimelineMax();
 
@@ -15,19 +14,18 @@
         .fromTo(arrow, 1, { y: 50 }, { y: -50, ease: Power2.easeInOut }, "-=0.5");
 </script>
 
-<body data-spy="scroll" data-target="#myScrollspy" data-offset="70">
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="100">
 
-    <div class="container" style="padding-top: 50px">
-        <div class="row">
-            <nav class="col-sm-3" id="myScrollspy">
+        <div class="row text">
+            <nav class="col-sm-2" id="myScrollspy">
                 <ul class="nav nav-pills nav-stacked flex-column">
-                    <li><a href="#section1">Robert Pennifold</a></li>
-                    <li><a href="#section2">Celestine Weegenaar</a></li>
-                    <li><a href="#section3">John House</a></li>
-                    <li><a href="#section4">Michael Wilsher</a></li>
+                    <li><a href="#section1" class="spyList-item">Robert Pennifold</a></li>
+                    <li><a href="#section2" class="spyList-item">Celestine Weegenaar</a></li>
+                    <li><a href="#section3" class="spyList-item">John House</a></li>
+                    <li><a href="#section4" class="spyList-item">Michael Wilsher</a></li>
                 </ul>
             </nav>
-            <div class="col-sm-9">
+            <div class="col-sm-10">
                 <div id="section1">
                     <div class="jumbotron">
                         <div class="row">
@@ -197,7 +195,7 @@
 
             </div>
         </div>
-    </div>
+
 
 </body>
 {{> page/social-links}}
