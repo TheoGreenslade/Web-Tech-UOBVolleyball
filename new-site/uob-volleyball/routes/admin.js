@@ -56,11 +56,14 @@ router.get('/orders', function(req, res, next) {
         user = {id: req.user.id};
     } 
     if(user && admin) {
+        admin_db.getOrders( function(error, orders) {
             res.render('orders', { 
                 user: user,
+                orders: orders,
                 title: 'Orders',
                 admin: admin
-            });
+            });     
+        });
        }else{
             req.flash('error_message', 'Only Admins can access that page.')
             res.redirect('/');

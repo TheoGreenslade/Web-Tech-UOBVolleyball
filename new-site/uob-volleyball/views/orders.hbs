@@ -2,6 +2,23 @@
 {{> messages}}
 {{> page/titleBanner}}
 
-
+{{#each orders}}
+    <div class="jumbotron">
+        <div class="row">
+            <h3>User: {{email}} </h3> 
+            <h3>Purchase: {{product}}</h3> 
+            <h3>Bought On: {{date}}</h3>
+            {{#if processed}}
+                <p>Order processed</p>
+            {{else}}
+                <div>
+                    <form action="/add_admin" method="post">
+                        <button type="submit" class="btn btn-lg btn-danger" name="orderId" value="{{id}}">Mark as Processed</button>
+                    </form>
+                </div>  
+            {{/if}}
+        </div>
+    </div>
+{{/each}}
 
 {{> page/social-links}}

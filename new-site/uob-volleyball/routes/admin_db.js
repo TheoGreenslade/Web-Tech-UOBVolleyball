@@ -82,6 +82,18 @@ exports.setAdmin = function(userId) {
 }
 
 
+exports.getOrders = function(callback) {
+    var query = "SELECT User.email AS email, Product.name AS product, Purchase.purchaseDate AS date, Purchase.id AS id FROM User JOIN Purchase ON User.id = Purchase.user_id JOIN Product ON Purchase.product_id = Product.id;"
+    
+        db.serialize(( ) => {
+       db.all(query, function(error, rows) {
+            if(error) throw error;
+           callback(error, rows);           
+       });
+    });
+}
+
+
 
 
 
