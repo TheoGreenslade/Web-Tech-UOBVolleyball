@@ -1,0 +1,90 @@
+{{> page/nav user=user}}
+{{> messages}}
+{{> page/titleBanner}}
+
+<div class="container">
+    <div class="row">
+        <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="col-sm-6">
+<h1>Add Product</h1>
+<form action="/add_product" method="post">
+    
+    
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <label for="productName">Product Name</label>
+            <input type="text" class="form-control" id="productName" name="productName" placeholder="Name" required="required" />
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <label for="descriptionText">Description (optional)</label>
+        <textarea class="form-control" id="descriptionText" rows="3" name="productDescription"></textarea>
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label for="categorySelect">Category</label>
+            <select class="form-control" id="categorySelect" name="category" required="required">
+                {{#each categories}}
+                    <option value = "{{id}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>    
+    
+    <div class="form-row">
+        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <label for="productPrice">Price</label>
+        <input type="text" class="form-control" id="productPrice" name="productPrice" required="required"/>
+        </div>
+    </div>
+    
+        <div class="form-row">
+        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <label for="price">Discount % (optional)</label>
+        <input type="text" class="form-control" id="productDiscount" name="productDiscount"/>
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <label for="productImagePath">Image Path (optional)</label>
+        <input type="text" class="form-control" id="productImagePath" name="productImagePath" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <button type="submit" class="btn btn-danger">Confirm</button>
+        </div>
+    </div>
+</form>
+</div>
+
+<div class="col-sm-6">
+<h1>Add Category</h1>
+<form action="/add_category" method="post">
+    
+    
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <label for="categoryName">Category Name</label>
+            <input type="text" class="form-control" id="categoryName" name="categoryName" placeholder="Name" required="required" />
+        </div>
+    </div>
+ 
+    <div class="form-row">
+        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <button type="submit" class="btn btn-danger">Confirm</button>
+        </div>
+    </div>
+</form>
+</div>
+        </section>
+    </div>
+</div>
+
+{{> page/social-links}}

@@ -5,7 +5,23 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcrypt');
 
+router.get('/login', function(req, res, next) {
+    if(req.user) {
+            req.flash('error_message', 'Already Logged In.');
+            res.redirect('/');
+    } else {
+        res.render('login', { 
+            user: null,
+            title: 'Login & Register'
+        });
+    }
+});
 
+router.get('/logout', function(req, res, next) {
+    req.logout();
+    req.flash('success_message', 'Successful Logout.');
+    res.redirect('/login');
+});
 
 router.post('/register_user', function(req, res, next) {
     var email = req.body.registerEmail;

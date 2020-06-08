@@ -30,3 +30,24 @@ exports.insertPurchase = function(userId, productId) {
        });
     });
 }
+
+exports.getCategories = function(callback){
+    var query = "SELECT * FROM Category;";
+    
+        db.serialize(( ) => {
+       db.all(query, function(error, rows) {
+            if(error) throw error;
+           callback(error, rows);           
+       });
+    });   
+}
+
+
+
+
+
+
+
+
+
+

@@ -117,9 +117,11 @@ var router = express.Router();
 var index = require('./routes/index');
 var login = require('./routes/login');
 var shop = require('./routes/shop');
+var admin = require('./routes/admin');
 app.use('/', index);
 app.use('/', login);
 app.use('/', shop);
+app.use('/', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
