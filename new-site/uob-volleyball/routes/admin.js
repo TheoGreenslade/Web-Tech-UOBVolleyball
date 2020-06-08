@@ -5,15 +5,62 @@ var admin_db = require('./admin_db.js');
 
 router.get('/admin', function(req, res, next) {
   var user = null;
-    if(req.user) user = {id: req.user.id};
-    if(user && req.user.admin) {
+        var admin = false;
+    if(req.user){
+        if(req.user.admin) admin = true;
+        user = {id: req.user.id};
+    } 
+    if(user && admin) {
         shop_db.getCategories( function(error, categories) {
             res.render('admin', { 
                 user: user,
                 categories: categories,
-                title: 'Add Products or Categories'
+                title: 'Add Products or Categories',
+                admin: admin
             });
         });
+       }else{
+            req.flash('error_message', 'Only Admins can access that page.')
+            res.redirect('/');
+       }
+});
+
+router.get('/users', function(req, res, next) {
+  var user = null;
+        var admin = false;
+    if(req.user){
+        if(req.user.admin) admin = true;
+        user = {id: req.user.id};
+    } 
+    if(user && admin) {
+        admin_db.getUsers( function(error, users) {
+            res.render('users', { 
+                user: user,
+                users: users,
+                title: 'Users',
+                admin: admin
+            });
+        });
+
+       }else{
+            req.flash('error_message', 'Only Admins can access that page.')
+            res.redirect('/');
+       }
+});
+
+router.get('/orders', function(req, res, next) {
+  var user = null;
+        var admin = false;
+    if(req.user){
+        if(req.user.admin) admin = true;
+        user = {id: req.user.id};
+    } 
+    if(user && admin) {
+            res.render('orders', { 
+                user: user,
+                title: 'Orders',
+                admin: admin
+            });
        }else{
             req.flash('error_message', 'Only Admins can access that page.')
             res.redirect('/');
@@ -58,7 +105,8 @@ router.post('/add_product', function(req, res, next) {
                 success_message: req.flash('success_message'),
                 title: 'Admin page',
                 error_message: null,
-                user: user
+                user: user,
+                admin: true
             });
         }    
     });
@@ -79,10 +127,18 @@ router.post('/add_category', function(req, res, next) {
                 success_message: req.flash('success_message'),
                 title: 'Admin page',
                 error_message: null,
-                user: user
+                user: user,
+                admin: true
             });
         }    
     });
+});
+
+router.post('/add_admin', function(req, res, next) {
+    var userId = req.body.userId;
+    admin_db.setAdmin(userId);
+    req.flash('success_message', 'User added as admin.');
+    res.redirect('/users');
 });
 
 module.exports = router;

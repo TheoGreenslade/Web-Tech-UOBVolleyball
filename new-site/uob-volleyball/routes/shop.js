@@ -5,6 +5,8 @@ var shop_db = require('./shop_db.js');
 router.get('/shop', function(req, res, next) {
     var user = null;
     if(req.user) {
+            var admin = false;
+    if(req.user.admin) admin = true;
        user = {id: req.user.id};
        shop_db.getProducts(function(error, products) {
            if(error) throw error;
@@ -14,7 +16,8 @@ router.get('/shop', function(req, res, next) {
                     categories: categories,
                     products: products,
                     user: user,
-                    title:'Shop'
+                    title:'Shop',
+                    admin: admin
                 });    
            });  
        });

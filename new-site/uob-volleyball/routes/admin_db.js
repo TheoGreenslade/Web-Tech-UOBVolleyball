@@ -55,3 +55,35 @@ exports.selectCategoryByName = function(name, callback) {
        });
     });
 }
+
+exports.getUsers = function(callback) {
+    var query = "SELECT * FROM User;"
+    
+        db.serialize(( ) => {
+       db.all(query, function(error, rows) {
+            if(error) throw error;
+           callback(error, rows);           
+       });
+    });
+}
+
+exports.setAdmin = function(userId) {
+    var query = "UPDATE User SET admin = 1 WHERE id = ?;"
+    
+        db.serialize(( ) => {
+       db.run(query, userId, function(error) {
+           if(error) {
+               console.log(error);
+           } else {
+               console.log('User added as admin');
+           }            
+       });
+    });
+}
+
+
+
+
+
+
+

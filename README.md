@@ -26,13 +26,19 @@ utf-8: No Idea
 The site is HTTPS certified and can run with https -although the certificate is not by a verified authority-.
 We should be at least on a B here since https is an A-category task.
 We also use cookies for the session handler as part of the login system.
+It is possible to login with an Admin account and do extra things, this is done by having an admin flag in the database
 Security issues: 
 	"app.use(helmet)" + npm install helmet prevents - protects against attacks on express
 	SQLInjection-proof thanks to prepared statements with ?
 	Prevent cross-site scripting using templating engine "handlebars"
 <li>X for Database</li>
 We have a insert and a select Query, we use callbacks, so we are at a B.
-To get to A we probably need to add a Shop
+Describe database:
+Why IDs for primary keys?
+Product table, why something null something else not null? Why name unique?
+User table
+Orders table
+Category table
 <li>X for Dynamic pages</li>
 NavBar and Footers + user logic in navbar puts us at a B I think.
 To get to A we probably need to add a bunch of partials, I don't know what kind though.

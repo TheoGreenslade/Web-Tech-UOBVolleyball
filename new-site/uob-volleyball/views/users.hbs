@@ -1,0 +1,23 @@
+{{> page/nav}}
+{{> messages}}
+{{> page/titleBanner}}
+
+{{#each users}}
+    <div class="jumbotron">
+        <div class="row">
+            <h3>Username: {{username}} Email: {{email}} </h3> 
+            
+            {{#if admin}}
+                <p>Is already an Admin!</p>
+            {{else}}
+                <div>
+                    <form action="/add_admin" method="post">
+                        <button type="submit" class="btn btn-lg btn-danger" name="userId" value="{{id}}">Make Admin</button>
+                    </form>
+                </div>  
+            {{/if}}
+        </div>
+    </div>
+{{/each}}
+
+{{> page/social-links}}

@@ -56,6 +56,24 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/hall-of-fame">HALL OF FAME</a>
                 </li>
+                {{#if admin}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ADMIN
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" style="font-weight:bold; color:#7f7f7f" href="/admin">ADD PRODUCTS</a>
+                        <a class="dropdown-item" style="font-weight:bold; color:#7f7f7f" href="/users">SEE USERS</a>
+                        {{!-- <a class="dropdown-item" href="/">SQUADS</a> --}}
+                        <a class="dropdown-item" style="font-weight:bold; color:#7f7f7f" href="/orders">SEE ORDERS</a>
+                        {{!-- <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/">FAQS</a>
+                        <a class="dropdown-item" href="/">INTRAMURAL</a>
+                        <a class="dropdown-item" href="/">TEAM BRISTOL</a>
+                        <a class="dropdown-item" href="/">LEAGUE TABLES</a> --}}
+                    </div>
+                </li>
+                {{/if}}
                 {{#if user}} <!-- user parameter sent in from pages if user is logged in -->
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
