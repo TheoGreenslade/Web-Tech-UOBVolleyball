@@ -106,12 +106,14 @@ a {
 
 .arrow {
   color: white;
-  font-size: 1000%;
+  font-size: 100%;
   position: absolute;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
+  top: 50%;
+  left: 80%;
 }
 
 /* When you move the mouse over the icon, change color */
@@ -214,14 +216,6 @@ div.col-sm-9 div {
   object-fit: cover
 }
 
-.arrow {
-  position: absolute;
-  top: 70%;
-  left: 80%;
-  font-size: 100px;
-  transition: translate(-20%,-70%);
-}
-
 .svgBall {
   background-image: url(/images/svg/volleyballBackground.svg); 
   background-size: 100%;
@@ -259,7 +253,8 @@ div.col-sm-9 div {
   padding: 20px;
   padding-top: 0;
   padding-bottom: 2%;
-  width:100%
+  width:100%;
+  margin: 0%
 }
 
  #quote-div {
@@ -275,6 +270,7 @@ div.col-sm-9 div {
 #titleBanner{
   background-color: #c82433ff;
   color:white;
+  border-radius: 0
 }
 
 .text{
@@ -291,11 +287,13 @@ div.col-sm-9 div {
 }
 
 .socialsNav {
+  position:absolute;
   background-color: #0d0d0d; 
   margin:0%; 
   border-radius:0px; 
   border-color:#0d0d0d; 
-  padding-bottom:10px
+  padding-bottom:10px;
+  width: 100%
 }
 
 .socialsButton {
@@ -352,4 +350,18 @@ div.col-sm-9 div {
 
 #login{
   padding-bottom: 19%
+}
+
+.list-item {
+  background-color: #eaecef;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.list-item:hover {
+  background-color: lightgray
+}
+
+.list {
+  padding-bottom: 20%
 }
