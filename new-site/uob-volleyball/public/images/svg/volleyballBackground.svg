@@ -6,6 +6,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    sodipodi:docname="volleyballBackground.svg"
@@ -18,6 +19,18 @@
   <defs
      id="defs467">
     <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1133">
+      <stop
+         style="stop-color:#b00111;stop-opacity:1"
+         offset="0"
+         id="stop1129" />
+      <stop
+         style="stop-color:#ff5a6a;stop-opacity:1"
+         offset="1"
+         id="stop1131" />
+    </linearGradient>
+    <linearGradient
        osb:paint="solid"
        id="linearGradient1302">
       <stop
@@ -25,6 +38,15 @@
          offset="0"
          style="stop-color:#000000;stop-opacity:1;" />
     </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1133"
+       id="linearGradient1135"
+       x1="-12.570387"
+       y1="87.527138"
+       x2="260.71915"
+       y2="87.527138"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      inkscape:window-maximized="0"
@@ -34,7 +56,7 @@
      inkscape:window-width="1440"
      showgrid="false"
      inkscape:document-rotation="0"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:document-units="mm"
      inkscape:cy="373.25018"
      inkscape:cx="670.08966"
@@ -67,7 +89,7 @@
        height="194.60822"
        width="273.7551"
        id="rect862"
-       style="fill:#c82433;stroke:none;stroke-width:7.99999;stroke-dashoffset:37.7953;fill-opacity:1" />
+       style="fill:url(#linearGradient1135);stroke:none;stroke-width:7.99999;stroke-dashoffset:37.7953;fill-opacity:1;fill-rule:nonzero" />
   </g>
   <g
      transform="translate(77.291031,-25.210016)"
