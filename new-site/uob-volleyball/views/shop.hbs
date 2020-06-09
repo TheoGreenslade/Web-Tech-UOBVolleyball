@@ -2,14 +2,7 @@
 {{> messages}}
 {{> page/titleBanner}}
 
-<script src="javascripts/shop/shop-helper.js"></script>
-
-<script>
-    var scripts = document.getElementsByTagName('script');
-    var index = scripts.length - 1;
-    var thisScript = scripts[index];
-    var queryString = myScript.src.replace(/^[^\?]+\??/,'');
-    
+<script>  
 function displayTicked() {
     var categories = {{{json categories}}};
     var products = {{{json products}}};
@@ -101,7 +94,6 @@ function displayTicked() {
           </div>
         </div>
       </div>
-
 {{/each}}
 
 {{> page/social-links}}

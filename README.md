@@ -33,15 +33,13 @@ We also generated a repeating SVG pattern for the background of a page by creati
 
 
 
-<li>X for Server</li>
+<li>A for Server</li>
 Our express server is able to detect invalid URLs -such as URLs with spaces in them- or unknown URLs and show an error page. Further, users are able to login and the user session persists using cookies through the node.js module "Passport" with the Local Strategy. Based on whether a user is logged in or not, and whether the account is an admin account, different privileges are granted to the session.
 If a user tries to access a page that exists but they have no clearance to view, they are redirected to another page (either the homepage or the login page if they need to login to view that resource).
-Finally, this server is able to run using Secure HTTP (https://localhost:8081) using the key and certificate we produced, which are stored in the /security folder.	
+Finally, this server is able to run using Secure HTTP (go to https://localhost:8081) using the key and certificate we produced, which are stored in the /security folder.	
 
 
-
-
-<li>X for Database</li>
+<li>A for Database</li>
 The Database for this Website:
 
 **ADD IMAGE IN PDF**
