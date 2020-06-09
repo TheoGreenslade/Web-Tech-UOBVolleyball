@@ -44,6 +44,12 @@ var hbs = require('express-handlebars');
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+var hbsHelperBuild = hbs.create({});
+
+// register new handlebars helper
+hbsHelperBuild.handlebars.registerHelper('json', function(content) {
+  return JSON.stringify(content);
+})
 
 //Passport Setup
 var passport = require('passport');
