@@ -1,3 +1,5 @@
+"use strict";
+
 function displayTicked() {
     var categories = {{{json categories}}};
     var products = {{{json products}}};

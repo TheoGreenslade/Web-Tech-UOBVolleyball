@@ -1,3 +1,5 @@
+"use strict";
+
 function scrollDown() {
     var elmnt = document.getElementById("intro");
     elmnt.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -13,7 +15,7 @@ function changeActiveNavItem(title) {
         this.classList.remove("active");
     });
     
-    let navItem = document.getElementById("nav-home");
+    var navItem = document.getElementById("nav-home");
     switch (title) {
         case 'Training':
             navItem = document.getElementById("nav-training");

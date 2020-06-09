@@ -1,4 +1,6 @@
-let quote = document.getElementById("quote");
+"use strict";
+
+var quote = document.getElementById("quote");
 
 var QuoteCount = 7; // The number of quotes in your library
 var dtNow = new Date();
@@ -11,6 +13,6 @@ fetch('text/quotes.txt')
     .then(response => response.text())
     .then((data) => {
         // console.log(data)
-        let lines = data.split(/\r\n|\n/);
+        var lines = data.split(/\r\n|\n/);
         quote.innerHTML = lines[QuoteToDisplay];
     });

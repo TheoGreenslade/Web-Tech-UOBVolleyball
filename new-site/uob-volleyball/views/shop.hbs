@@ -5,6 +5,11 @@
 <script src="javascripts/shop/shop-helper.js"></script>
 
 <script>
+    var scripts = document.getElementsByTagName('script');
+    var index = scripts.length - 1;
+    var thisScript = scripts[index];
+    var queryString = myScript.src.replace(/^[^\?]+\??/,'');
+    
 function displayTicked() {
     var categories = {{{json categories}}};
     var products = {{{json products}}};
@@ -63,7 +68,7 @@ function displayTicked() {
 
 
 {{#each products}}
-      <div class="jumbotron" id="productBox{{product_id}}" value="{{category_name}}" style="display:block">
+      <div class="jumbotron" id="productBox{{product_id}}" value="{{category_name}}" >
         <div class="row">
           <div class="col-sm-4">
             <div class="container-fluid">

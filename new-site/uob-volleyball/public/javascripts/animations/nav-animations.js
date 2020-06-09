@@ -1,3 +1,5 @@
+"use strict";
+
 const navLogo = document.getElementById('nav-logo');
 const navHome = document.getElementById('nav-home');
 const navClub = document.getElementById('nav-club');

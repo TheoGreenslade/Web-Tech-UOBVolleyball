@@ -1,3 +1,5 @@
+"use strict";
+
 const homeImage = document.querySelector('.homeImage');
 const arrow = document.querySelector('.icon');
 
