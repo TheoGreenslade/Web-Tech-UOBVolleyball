@@ -1,6 +1,7 @@
 body {
   /* padding: 50px; */
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  position: relative;
 }
 
 a {
@@ -153,12 +154,9 @@ a {
 
 .tabs {
   font-family: Helvetica;
-  font-weight: bold;
   width: 50%;
   font-size: 30px;
   color: #495058;
-  
-
 }
 
 .white {
@@ -168,15 +166,11 @@ a {
   padding-bottom: 100px;
 }
 
-
-body {
-  position: relative;
-}
 ul.nav-pills {
-  /* position: fixed; */
   position: sticky;
   top: 100px;
 }
+
 div.col-sm-9 div {
   font-size: 28px;
 }
@@ -188,7 +182,7 @@ div.col-sm-9 div {
 }
 
 .heading {
-  font-family: arial;
+  font-family: Helvetica;
   font-size: 50px;
 }
 
@@ -229,7 +223,7 @@ div.col-sm-9 div {
 }
 
 #home-title {
-  padding-top: 60px 
+  padding-top: 80px 
 }
 
 .link {
@@ -275,7 +269,7 @@ div.col-sm-9 div {
 
 .text{
   font-family: Helvetica;
-  font-size: 20px
+  font-size: 20px;
 }
 
 #navbarSupportedContent{
@@ -364,4 +358,27 @@ div.col-sm-9 div {
 
 .list {
   padding-bottom: 20%
+}
+
+.contact-background{
+  background-image: url(/images/elliot.png);
+  background-size: 100%;
+}
+
+.zoom {
+  height: 300px;
+  overflow: hidden;
+}
+
+.zoom img {
+  transform-origin: 50% 65%;
+  transition: transform .7s, filter 3s ease-in-out;
+}
+
+.zoom:hover img {
+  transform: scale(1.2);
+}
+
+.card-title.text {
+  color: black;
 }

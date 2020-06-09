@@ -3,7 +3,7 @@
 {{> page/titleBanner}}
 
 <div class="list">
-{{#each users}}
+    {{#each users}}
     <div class="side-padding">
         <div class="row list-item text">
             <div class="col-sm-4">
@@ -14,22 +14,22 @@
             </div>
 
             {{!-- <h3>Username: {{username}} Email: {{email}} </h3>  --}}
-            
+
             {{#if admin}}
             <div class="col-sm-4">
                 <p>Is already an Admin! </p>
             </div>
-                {{!-- <p>Is already an Admin!</p> --}}
+            {{!-- <p>Is already an Admin!</p> --}}
             {{else}}
-                <div class="col-sm-4">
-                    <form action="/add_admin" method="post">
-                        <button type="submit" class="btn btn-lg btn-danger" name="userId" value="{{id}}">Make Admin</button>
-                    </form>
-                </div>  
+            <div class="col-sm-4">
+                <form action="/add_admin" method="post">
+                    <button type="submit" class="btn btn-lg btn-danger" name="userId" value="{{id}}">Make Admin</button>
+                </form>
+            </div>
             {{/if}}
         </div>
     </div>
-{{/each}}
-</div>  
+    {{/each}}
+</div>
 
 {{> page/social-links}}

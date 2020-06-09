@@ -4,7 +4,7 @@
 
 
 <div class="text">
-  <div class="row">
+  <div class="row ">
     <h2>Categories to show: </h2>
     {{#each categories}}
     <div class="form-check form-check-inline">
@@ -25,41 +25,44 @@
   </script>
 </p>
 
-    <div id='{{product_id}}'>
-      <div class="jumbotron">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="container-fluid">
-                {{#if imagePath}}
-                    <img src="{{imagePath}}" class="img-responsive" alt="Responsive image"></img>
-                {{else}}
-                    <img src="images/shop/noImage.svg" class="img-responsive" alt="Responsive image"></img>
-                {{/if}}
-            </div>
-          </div>
-          <div class="col-sm-8">
-            <h1>{{product_name}}</h1>   
-            <h2>Category: {{category_name}}</h2>
-            <p>{{description}}</p>
-            <p>                  
-              <script>
-                var price = {{price}} * 0.01;
-                    {{#if discount}}
-                        price = price - price*{{discount}}*0.01;
-                    {{/if}}
-                    document.write("PRICE: £" + price.toFixed(2));
-              </script>
-            </p>
-            <div>
-                <form action="/purchase" method="post">
-                    <button type="submit" class="btn btn-lg btn-block btn-danger" name="productId" value="{{product_id}}">Purchase</button>
-                </form>
-            </div>            
-          </div>
+<div id='{{product_id}}'>
+  <div class="jumbotron side-padding">
+    <div class="row text">
+      <div class="col-sm-4">
+        <div class="container-fluid">
+          {{#if imagePath}}
+          <img src="{{imagePath}}" class="img-responsive" alt="Responsive image"></img>
+          {{else}}
+          <img src="images/shop/noImage.svg" class="img-responsive" alt="Responsive image"></img>
+          {{/if}}
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <h1>{{product_name}}</h1>
+        <h2>Category: {{category_name}}</h2>
+        <p>{{description}}</p>
+        <p>
+          <script>
+            var price = {{ price }} * 0.01;
+            { { #if discount} }
+            price = price - price * {{ discount }}* 0.01;
+            {
+              {
+                /if}}
+                document.write("PRICE: £" + price.toFixed(2));
+          </script>
+        </p>
+        <div>
+          <form action="/purchase" method="post">
+            <button type="submit" class="btn btn-lg btn-block btn-danger text" name="productId"
+              value="{{product_id}}">Purchase</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 {{/each}}
 
