@@ -25,9 +25,11 @@ router.get('/logout', function(req, res, next) {
 });
 
 router.post('/register_user', function(req, res, next) {
+    
     var email = req.body.registerEmail;
     var username = req.body.registerUsername;
     var password = req.body.registerPassword;
+    
     
     login_db.selectUserByEmail(email, function(error, user) {
         if(user) {
