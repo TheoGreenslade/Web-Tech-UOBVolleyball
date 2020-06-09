@@ -318,7 +318,7 @@ div.col-sm-9 div {
   padding-top: 40px;padding-bottom: 40px;border: 0
 }
 
-.spyList {
+.sideList {
   position: sticky;
   top: 100px;
 }
@@ -381,4 +381,17 @@ div.col-sm-9 div {
 
 .card-title.text {
   color: black;
+}
+
+.form-group-sideList {
+  width: 100%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.form-check-label {
+  font-weight: 400;
+  color: #495057
 }
