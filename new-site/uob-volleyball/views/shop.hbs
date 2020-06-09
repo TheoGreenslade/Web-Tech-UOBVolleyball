@@ -2,13 +2,60 @@
 {{> messages}}
 {{> page/titleBanner}}
 
+<script src="javascripts/shop/shop-helper.js"></script>
+
+<script>
+function displayTicked() {
+    var categories = {{{json categories}}};
+    var products = {{{json products}}};
+    for (var i = 0; i<categories.length; i++) {
+       for(var j = 0; j<products.length; j++) {
+            var checkBox = document.getElementById("inlineCheckbox"+categories[i].id);
+            var box = document.getElementById("productBox"+products[j].product_id);
+            if(products[j].category_name == categories[i].name) {
+                if (checkBox.checked == true){
+                    box.style.display = "block";
+                } else {
+                    box.style.display = "none";
+                }
+            }
+        }
+    }
+}
+</script>
+
+<form action="/shop" method="post">
+    <label for="orderBy">Order By</label>
+<div class="form-row" id="orderBy">
+        <div class="form-group">
+            <select class="form-control" id="orderByThis" name="orderByThis" required="required">
+                {{#each orderByOptions}}
+                    <option value = "{{id}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+               <div class="form-group">
+            <select class="form-control" name="order" required="required">
+                    <option value = "ASC">Lowest to Highest</option>
+                    <option value = "DESC">Highest to Lowest</option>
+            </select>
+        </div>
+    
+        <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <button type="submit" class="btn btn-danger">Order</button>
+        </div>
+    </div>
+</form>
+
 
 <div class="text">
-  <div class="row ">
-    <h2>Categories to show: </h2>
+
+  <div class="row">
+    <h2>Categories: </h2>
+
     {{#each categories}}
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox{{id}}" value="option{{id}}" checked>
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox{{id}}" value="{{name}}" onclick="displayTicked()" checked>
       <label class="form-check-label" for="inlineCheckbox{{id}}">{{name}}</label>
     </div>
     {{/each}}
@@ -17,53 +64,39 @@
 
 
 {{#each products}}
-<p>
-  <script>
-    if (document.getElementById("inlineCheckbox" + {{ category }}).checked) {
-      document.write("I should display this item");
-    }
-  </script>
-</p>
+      <div class="jumbotron" id="productBox{{product_id}}" value="{{category_name}}" style="display:block">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="container-fluid">
+                {{#if imagePath}}
+                    <img src="{{imagePath}}" class="img-responsive" alt="Responsive image"></img>
+                {{else}}
+                    <img src="images/shop/noImage.svg" class="img-responsive" alt="Responsive image"></img>
+                {{/if}}
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <h1>{{product_name}}</h1>
+            <h2>Category: {{category_name}}</h2>
+            <p>{{description}}</p>
+            <p>
+              <script>
+                var price = {{price}} * 0.01;
+                    {{#if discount}}
+                        price = price - price*{{discount}}*0.01;
+                    {{/if}}
+                    document.write("PRICE: £" + price.toFixed(2));
+              </script>
+            </p>
+            <div>
+                <form action="/purchase" method="post">
+                    <button type="submit" class="btn btn-lg btn-block btn-danger" name="productId" value="{{product_id}}">Purchase</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<div id='{{product_id}}'>
-  <div class="jumbotron side-padding">
-    <div class="row text">
-      <div class="col-sm-4">
-        <div class="container-fluid">
-          {{#if imagePath}}
-          <img src="{{imagePath}}" class="img-responsive" alt="Responsive image"></img>
-          {{else}}
-          <img src="images/shop/noImage.svg" class="img-responsive" alt="Responsive image"></img>
-          {{/if}}
-        </div>
-      </div>
-      <div class="col-sm-8">
-        <h1>{{product_name}}</h1>
-        <h2>Category: {{category_name}}</h2>
-        <p>{{description}}</p>
-        <p>
-          <script>
-            var price = {{ price }} * 0.01;
-            { { #if discount} }
-            price = price - price * {{ discount }}* 0.01;
-            {
-              {
-                /if}}
-                document.write("PRICE: £" + price.toFixed(2));
-          </script>
-        </p>
-        <div>
-          <form action="/purchase" method="post">
-            <button type="submit" class="btn btn-lg btn-block btn-danger text" name="productId"
-              value="{{product_id}}">Purchase</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
 {{/each}}
 
 {{> page/social-links}}

@@ -3,14 +3,30 @@
 {{> page/titleBanner}}
 
 <div class="list">
-    {{#each users}}
+
+        <div class="side-padding">
+        <div class="row list-item list-group-item-danger text">
+            <div class="col-sm-4">
+                <p>Username</p>
+            </div>
+            <div class="col-sm-4">
+                <p>Email</p>
+            </div>
+            
+            <div class="col-sm-4">
+                <p>Privilege Status</p>
+            </div>
+        </div>
+        </div>
+{{#each users}}
+
     <div class="side-padding">
         <div class="row list-item text">
             <div class="col-sm-4">
-                <p>Username: {{username}}</p>
+                <p>{{username}}</p>
             </div>
             <div class="col-sm-4">
-                <p>Email: {{email}} </p>
+                <p>{{email}} </p>
             </div>
 
             {{!-- <h3>Username: {{username}} Email: {{email}} </h3>  --}}

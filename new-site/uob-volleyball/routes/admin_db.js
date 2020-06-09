@@ -83,7 +83,7 @@ exports.setAdmin = function(userId) {
 
 
 exports.getOrders = function(callback) {
-    var query = "SELECT User.email AS email, Product.name AS product, Purchase.purchaseDate AS date, Purchase.id AS id FROM User \
+    var query = "SELECT User.email AS email, Product.name AS product, Purchase.purchaseDate AS date, Purchase.id AS id, Purchase.processed AS processed FROM User \
                     JOIN Purchase ON User.id = Purchase.user_id \
                     JOIN Product ON Purchase.product_id = Product.id;"
     
@@ -95,7 +95,19 @@ exports.getOrders = function(callback) {
     });
 }
 
-
+exports.setProcessed = function(orderId) {
+    var query = "UPDATE Purchase SET processed = 1 WHERE id = ?;"
+    
+        db.serialize(( ) => {
+       db.run(query, orderId, function(error) {
+           if(error) {
+               console.log(error);
+           } else {
+               console.log('User added as admin');
+           }            
+       });
+    });
+}
 
 
 

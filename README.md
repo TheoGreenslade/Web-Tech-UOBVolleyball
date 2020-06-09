@@ -2,18 +2,20 @@
 
 <ul>
 <li>A for HTML</li>
-We used the Bootstrap framework to create multiple pages with a large amount of html content. On each page we combined a huge number of Bootstrap components as well as creating our own componets out of the basic html elements.
+We used the Bootstrap framework to create multiple pages with a large amount of html content. On each page we combined a huge number of Bootstrap components as well as creating our own componets out of the basic html elements. The Bootstrap components at the used include cards, models, navbars, scrollspys and many others. We chose to use XHTML to ensure our pages are correct.
 <li>A for CSS</li>
-We applied lots of css code to all of our html elements in order to create the perfect style of our website. This included combining the classes from the Bootstrap stylesheet with lots of our own custom css code.
+We applied lots of CSS code to all of our html elements in order to create the perfect style of our website. This included combining the classes from the Bootstrap stylesheet with lots of our own custom CSS code. We made sure that all our styling was done using CSS and there are no style tags in our html code.
 <li>X for JS</li>
 In the database, the price is saved as an INT, when loading the pages, a simple script multiplies the 
 int by 0.01 and prints it to show the correct price.
 This ensures no rounding errors happen due to floating point algebra.
 <li>A for PNG</li>
-We editied PNG images for the title page of our website and the thumbnail for a video on our website. They were both editted in similar ways. For one of the images we made it wider by duplicating part of the image airbrushing it to merge it into the original image again. Then we altered the colour levels of the image and added a layer to lightly darken the corners of the image in order to make the colour on the subject stand out and be more dramatic. Finally Text was positioned in the centre of the image.
-Additionally, we created a title image for one of our pages but creating a collage of multiple images then applying a desaturation filter and adding text over the top.
+We editied PNG images for the title page of our website and the thumbnail for a video on our website. They were both editted in similar ways. We airbrushed the images by altering the colour levels of the image and added a layer to lightly darken the corners of the image in order to make the colour on the subject stand out and be more dramatic. Then text was positioned in the centre of the image. For one of the images we made it wider by duplicating part of the image then airbrushing it to merge it into the original image again using a content aware fill tool.
+Additionally, we created a title image for one of our pages by creating a collage of multiple images then applying a desaturation filter based on luminace and adding text over the top.
+The final image was an image of a volleyball player on a background saying 'UoB Volleyball'. This was done but cutting out the background of the player so that it was transparent and then placing this layer over the top for the background. The colour levels of the image were again altered as well.
 <li>A for SVG</li>
-We created a correctly proportioned SVG volleyball by creating curved paths and then using grouping and rotational transformations to repeat the curves around the ret of the ball. We also generated a repeating SVG pattern for the background of a page by creating the one individual image to be duplicated. Finally, we made SVG artwork by recreating images of people playing volleyball in SVG form.
+We created a correctly proportioned SVG volleyball by creating curved paths and then using grouping and rotational transformations to repeat the curves around the ret of the ball. A version of this ball is used in the background of our home page. This image had a colour gradient from two differnt shades of red as its background. 
+We also generated a repeating SVG pattern for the background of a page by creating the one individual image to be duplicated. Finally, we made SVG artwork by recreating images of people playing volleyball in SVG form.
 <li>X for Server</li>
 The server section is a load of checkboxes:
 port numbers: No Idea
