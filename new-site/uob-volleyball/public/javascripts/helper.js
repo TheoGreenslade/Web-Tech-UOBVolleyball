@@ -1,10 +1,5 @@
 "use strict";
 
-function scrollDown() {
-    var elmnt = document.getElementById("intro");
-    elmnt.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
 $(document).ready(function () {
     $("#myModal").modal('show');
     changeActiveNavItem(document.title);
@@ -14,7 +9,7 @@ function changeActiveNavItem(title) {
     $('.nav-item').each(function (index, value) {
         this.classList.remove("active");
     });
-    
+
     var navItem = document.getElementById("nav-home");
     switch (title) {
         case 'Training':

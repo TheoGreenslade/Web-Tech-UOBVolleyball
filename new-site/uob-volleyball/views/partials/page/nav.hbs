@@ -1,27 +1,28 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-top">
 
     <div id="navbarSupportedContent" class="collapse navbar-collapse white nav-logo">
-         <form class="form-inline my-2 my-lg-0">
-             <ul class="navbar-nav mr-auto">
+        <form class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav mr-auto">
                 <li id="nav-logo" class="nav-item">
-                    <a href="/"> 
+                    <a href="/">
                         <img src="images/logos/logo.png" height="50" class="d-inline-block align-top" alt=""></img>
-                    </a> 
+                    </a>
                 </li>
-         </form>
-        
+        </form>
+
     </div>
 
     <div class="collapse navbar-collapse white" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto"></ul>
-        <form class="form-inline my-2 my-lg-0">              
+        <form class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav mr-auto">
                 <li id="nav-home" class="nav-item active">
                     <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li id="nav-club" class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/about-the-club" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    THE CLUB
+                    <a class="nav-link dropdown-toggle" href="/about-the-club" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        THE CLUB
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/about-the-club">ABOUT THE CLUB</a>
@@ -38,7 +39,7 @@
                 <li id="nav-training" class="nav-item">
                     <a class="nav-link" href="/training">TRAINING</a>
                 </li>
-                 <li id="nav-squads" class="nav-item">
+                <li id="nav-squads" class="nav-item">
                     <a class="nav-link" href="/squads">SQUADS</a>
                 </li>
                 {{!-- <li class="nav-item">
@@ -58,14 +59,15 @@
                 </li>
                 {{#if admin}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    ADMIN
+                    <a class="nav-link dropdown-toggle" href="/admin" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ADMIN
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" style="font-weight:bold; color:#7f7f7f" href="/admin">ADD PRODUCTS</a>
-                        <a class="dropdown-item" style="font-weight:bold; color:#7f7f7f" href="/users">SEE USERS</a>
+                        <a class="dropdown-item" href="/admin">ADD PRODUCTS</a>
+                        <a class="dropdown-item" href="/users">SEE USERS</a>
                         {{!-- <a class="dropdown-item" href="/">SQUADS</a> --}}
-                        <a class="dropdown-item" style="font-weight:bold; color:#7f7f7f" href="/orders">SEE ORDERS</a>
+                        <a class="dropdown-item" href="/orders">SEE ORDERS</a>
                         {{!-- <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/">FAQS</a>
                         <a class="dropdown-item" href="/">INTRAMURAL</a>
@@ -74,7 +76,8 @@
                     </div>
                 </li>
                 {{/if}}
-                {{#if user}} <!-- user parameter sent in from pages if user is logged in -->
+                {{#if user}}
+                <!-- user parameter sent in from pages if user is logged in -->
                 <li id="nav-logout" class="nav-item">
                     <a class="nav-link" href="/logout">LOGOUT</a>
                 </li>
@@ -87,5 +90,7 @@
         </form>
     </div>
 </nav>
-<div class="underNav"><p> </p></div>
+<div class="underNav">
+    <p> </p>
+</div>
 <script src="javascripts/animations/nav-animations.js"></script>

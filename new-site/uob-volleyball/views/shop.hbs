@@ -54,8 +54,10 @@ function displayTicked() {
 
 
 <div class="text">
+
   <div class="row">
     <h2>Categories: </h2>
+
     {{#each categories}}
     <div class="form-check form-check-inline">
       <input class="form-check-input" type="checkbox" id="inlineCheckbox{{id}}" value="{{name}}" onclick="displayTicked()" checked>
@@ -64,7 +66,6 @@ function displayTicked() {
     {{/each}}
   </div>
 </div>
-
 
 
 {{#each products}}
@@ -100,6 +101,7 @@ function displayTicked() {
           </div>
         </div>
       </div>
+
 {{/each}}
 
 {{> page/social-links}}
