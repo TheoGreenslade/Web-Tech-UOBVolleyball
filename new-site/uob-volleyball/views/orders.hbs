@@ -5,17 +5,17 @@
 <div class="list">
         <div class="side-padding">
         <div class="row list-item list-group-item-danger text">
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <p>User</p>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <p> Item</p>
             </div>
             
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <p> Bought On</p>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <p>State</p> 
             </div>
         </div>
@@ -23,23 +23,23 @@
 {{#each orders}}
     <div class="side-padding">
         <div class="row list-item text">
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <p>{{email}} </p>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <p>{{product}}</p>
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <p>{{date}}</p>
             </div>
             {{#if processed}}
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <p>Order processed </p>
             </div>
 
             {{else}}
-                <div class="col-sm-3">
+                <div class="col-md-3">
                     <form action="/process_order" method="post">
                         <button type="submit" class="btn btn-lg btn-danger" name="processedOrder" value="{{id}}">Mark as Processed</button>
                     </form>

@@ -6,14 +6,14 @@
 
         <div class="side-padding">
         <div class="row list-item list-group-item-danger text">
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <p>Username</p>
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <p>Email</p>
             </div>
             
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <p>Privilege Status</p>
             </div>
         </div>
@@ -22,22 +22,22 @@
 
     <div class="side-padding">
         <div class="row list-item text">
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <p>{{username}}</p>
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <p>{{email}} </p>
             </div>
 
             {{!-- <h3>Username: {{username}} Email: {{email}} </h3>  --}}
 
             {{#if admin}}
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <p>Is already an Admin! </p>
             </div>
             {{!-- <p>Is already an Admin!</p> --}}
             {{else}}
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <form action="/add_admin" method="post">
                     <button type="submit" class="btn btn-lg btn-danger" name="userId" value="{{id}}">Make Admin</button>
                 </form>

@@ -98,7 +98,7 @@ router.get('/gallery', function(req, res, next) {
         if(req.user.admin) admin = true;
         user = {id: req.user.id};
     } 
-    res.render('gallery', { 
+    res.render('gallery2', { 
         user: user,
         title: 'Gallery',
         admin: admin
