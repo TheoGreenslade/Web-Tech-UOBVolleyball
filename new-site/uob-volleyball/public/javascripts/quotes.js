@@ -1,6 +1,6 @@
 let quote = document.getElementById("quote");
 
-var QuoteCount = 7; // The number of quotes in your library
+var QuoteCount = 7;
 var dtNow = new Date();
 var TZOffset = dtNow.getTimezoneOffset() * 60000;
 var Now = dtNow.getTime() - TZOffset;
