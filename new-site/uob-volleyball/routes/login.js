@@ -30,8 +30,12 @@ router.post('/register_user', function(req, res, next) {
     var username = req.body.registerUsername;
     var password = req.body.registerPassword;
     
-    
-    login_db.selectUserByEmail(email, function(error, user) {
+    if(password.length < 6) {
+        req.flash('error_message', 'Password must be at least 6 characters long.');
+                console.log("HEllo");
+        res.redirect('/login');
+    } else {
+            login_db.selectUserByEmail(email, function(error, user) {
         if(user) {
             req.flash('error_message', 'email already present in our database.');
             res.render('login', {
@@ -56,6 +60,8 @@ router.post('/register_user', function(req, res, next) {
             });
         }    
     });
+    } 
+
 });
 
 /*router.post('/login_user', function(req, res, next) {
@@ -89,7 +95,7 @@ passport.use(new LocalStrategy({passReqToCallback: true, usernameField: 'loginEm
                 if(error) throw error;
                 if(match) {
                     console.log('User logged in.');
-                    req.flash('success_message', 'Successfully logged in');
+                    req.flash('success_message', 'Welcome Back, ' + user.username);
                     return done(null, user);
                 } else {
                     req.flash('error_message', 'Password mismatch');

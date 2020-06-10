@@ -5,8 +5,8 @@ var shop_db = require('./shop_db.js');
 var admin_db = require('./admin_db.js');
 
 router.get('/admin', function(req, res, next) {
-  var user = null;
-        var admin = false;
+    var user = null;
+    var admin = false;
     if(req.user){
         if(req.user.admin) admin = true;
         user = {id: req.user.id};
@@ -27,8 +27,8 @@ router.get('/admin', function(req, res, next) {
 });
 
 router.get('/users', function(req, res, next) {
-  var user = null;
-        var admin = false;
+    var user = null;
+    var admin = false;
     if(req.user){
         if(req.user.admin) admin = true;
         user = {id: req.user.id};
@@ -50,8 +50,8 @@ router.get('/users', function(req, res, next) {
 });
 
 router.get('/orders', function(req, res, next) {
-  var user = null;
-        var admin = false;
+    var user = null;
+    var admin = false;
     if(req.user){
         if(req.user.admin) admin = true;
         user = {id: req.user.id};
@@ -65,10 +65,10 @@ router.get('/orders', function(req, res, next) {
                 admin: admin
             });     
         });
-       }else{
-            req.flash('error_message', 'Only Admins can access that page.')
-            res.redirect('/');
-       }
+    }else{
+        req.flash('error_message', 'Only Admins can access that page.')
+        res.redirect('/');
+   }
 });
 
 router.post('/add_product', function(req, res, next) {
@@ -79,21 +79,24 @@ router.post('/add_product', function(req, res, next) {
     var discount = req.body.productDiscount;
     var imagePath = req.body.productImagePath;
     
-    if(!Number.isInteger(price) && price>=0) {
+    if(!Number.isInteger(price) || price<0) {
         req.flash('error_message', 'Invalid Price');
         res.redirect('/admin');
-    }
-    
-    if(imagePath == '') { imagePath = null; }
-    if(description == '') { description = null; }
-    if(discount == '') { discount = null; }
-
-    admin_db.selectProductByName(name, function(error, product) {
-        if(product) {
-            req.flash('error_message', 'Product already present in our database.');
+    } else if(!Number.isInteger(discount) || discount>100 || discount<0) {
+            req.flash('error_message', 'Invalid Discount Amount.');
             res.redirect('/admin');
-        } else {
-            var product = {
+    } else {
+        
+        if(imagePath == '') { imagePath = null; }
+        if(description == '') { description = null; }
+        if(discount == '') { discount = null; }
+
+        admin_db.selectProductByName(name, function(error, product) {
+            if(product) {
+                req.flash('error_message', 'Product already present in our database.');
+                res.redirect('/admin');
+            } else {
+                var product = {
                     name: name,
                     description: description,
                     category: category,
@@ -102,11 +105,12 @@ router.post('/add_product', function(req, res, next) {
                     imagePath: imagePath
                 }
 
-            admin_db.insertProduct(product);  
-            req.flash('success_message', 'Product added.');
-            res.redirect('/admin');
-        }    
-    });
+                admin_db.insertProduct(product);  
+                req.flash('success_message', 'Product added.');
+                res.redirect('/admin');
+            }    
+        });
+    }
 });
 
 router.post('/add_category', function(req, res, next) {

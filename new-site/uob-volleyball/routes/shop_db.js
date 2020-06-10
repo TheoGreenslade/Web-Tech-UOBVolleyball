@@ -53,12 +53,12 @@ exports.getOrderedProducts = function(orderByThis, order, callback){
 
 exports.getOrderByOptions = function() {
     var option1 = {
-        name: 'Price', 
-        id: 'Product.price'
-    };
-    var option2 = {
         name: 'Last Added', 
         id: 'Product.addedAt'
+    };
+    var option2 = {
+        name: 'Price', 
+        id: 'Product.price'
     };
     var option3 = {
         name: 'Category', 

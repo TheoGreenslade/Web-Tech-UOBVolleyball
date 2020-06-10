@@ -151,8 +151,9 @@ var credentials = {key: privateKey, cert: certificate};
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(8080, "localhost");
-httpsServer.listen(8081, "localhost");
-console.log("Visit http://localhost:8080/ or  https://localhost:8081/");
+//Once deployed, this will allow the port to be re-configured, allowing for cloud hosting.
+var port = process.env.PORT || 8080;
+httpsServer.listen(port, "localhost");
+console.log("Visit https://localhost:8080/");
 
 module.exports = app;
