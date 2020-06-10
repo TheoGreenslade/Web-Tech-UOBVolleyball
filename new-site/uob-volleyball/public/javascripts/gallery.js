@@ -1,7 +1,6 @@
 let galleryImages = document.querySelectorAll(".gallery-image");
 let latestOpenedImage;
 let windowWidth = window.innerWidth;
-console.log(windowWidth)
 
 if (galleryImages) {
     galleryImages.forEach(function(image, index) {
