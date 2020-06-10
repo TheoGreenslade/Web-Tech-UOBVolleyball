@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
         user = {id: req.user.id};
     } 
     
-    console.log(user);
     res.render('index',{
         user: user,
         title: 'UoB Volleyball',

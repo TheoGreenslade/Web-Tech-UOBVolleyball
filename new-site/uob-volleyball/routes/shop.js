@@ -34,7 +34,6 @@ router.get('/shop', function(req, res, next) {
 router.post('/purchase', function(req, res, next) {
     var user = null;
     if(req.user) {
-        console.log("Product Id: " + req.body.productId);
             shop_db.insertPurchase(req.user.id, req.body.productId);
             req.flash('success_message', 'Thank you for your purchase!');
             res.redirect('/shop');
@@ -52,13 +51,11 @@ router.post('/shop', function(req, res, next) {
        user = {id: req.user.id};
         var orderByThis = req.body.orderByThis;
         var order = req.body.order;
-        console.log(orderByThis);
        shop_db.getOrderedProducts( orderByThis, order, function(error, products) {
            if(error) throw error;
            shop_db.getCategories(function(error, categories) {
                 if(error) throw error;
                var orderByOptions = shop_db.getOrderByOptions();
-               console.log(products);
                 res.render('shop', {
                     orderByOptions: orderByOptions,
                     categories: categories,

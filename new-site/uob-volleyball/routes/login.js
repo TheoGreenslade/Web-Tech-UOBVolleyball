@@ -32,7 +32,6 @@ router.post('/register_user', function(req, res, next) {
     
     if(password.length < 6) {
         req.flash('error_message', 'Password must be at least 6 characters long.');
-                console.log("HEllo");
         res.redirect('/login');
     } else {
             login_db.selectUserByEmail(email, function(error, user) {
@@ -82,10 +81,8 @@ router.post('/login_user',
 );
 
 passport.use(new LocalStrategy({passReqToCallback: true, usernameField: 'loginEmail', passwordField: 'loginPassword'}, function(req, loginEmail, loginPassword, done) {
-    console.log("Hello, " + loginEmail);
     
     login_db.selectUserByEmail(loginEmail, (error, user) => {
-        console.log("Hello9");
         if(error) throw error;
         if(!user){
             req.flash('error_message', 'Unknown user');
@@ -113,7 +110,6 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(id, done) {
   login_db.selectUserById(id, function(error, user) {
-      console.log('Hello');
     done(error, user);
   });
 });

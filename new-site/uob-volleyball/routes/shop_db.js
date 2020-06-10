@@ -33,7 +33,6 @@ exports.getCategories = function(callback){
 }
 
 exports.getOrderedProducts = function(orderByThis, order, callback){
-    console.log("In function: " + orderByThis);
     var query = "SELECT Product.id AS product_id, Product.imagepath AS imagePath, Product.name AS product_name, \
                     Product.description AS description, Product.price AS price, Product.discount AS discount, \
                     Category.id AS category_id, Category.name AS category_name FROM Product \
@@ -44,7 +43,6 @@ exports.getOrderedProducts = function(orderByThis, order, callback){
     
     db.serialize(( ) => {
        db.all(query, function(error, rows) {
-           console.log(query);
             if(error) throw error;
            callback(error, rows);           
        });
